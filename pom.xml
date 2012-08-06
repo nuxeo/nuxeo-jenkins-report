@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.nuxeo.ecm.distribution</groupId>
+    <artifactId>nuxeo-distribution</artifactId>
+    <version>5.6-SNAPSHOT</version>
+  </parent>
+
+  <groupId>com.nuxeo.jenkins.report</groupId>
+  <artifactId>parent</artifactId>
+  <packaging>pom</packaging>
+  <name>Nuxeo Jenkins Report</name>
+  <version>1.0-SNAPSHOT</version>
+
+  <properties>
+    <nuxeo.jenkins.version>1.0-SNAPSHOT</nuxeo.jenkins.version>
+  </properties>
+
+  <modules>
+    <module>nuxeo-jenkins-report-web</module>
+    <!--<module>marketplace</module>-->
+  </modules>
+
+  <!-- TODO -->
+  <!--
+  <profiles>
+    <profile>
+      <id>ftest</id>
+      <modules>
+        <module>ftest/webdriver</module>
+      </modules>
+    </profile>
+  </profiles>
+  -->
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.nuxeo.marketplace.sample</groupId>
+        <artifactId>ear</artifactId>
+        <version>${marketplace.sample.version}</version>
+        <type>zip</type>
+      </dependency>
+      <dependency>
+        <groupId>org.nuxeo.marketplace.sample</groupId>
+        <artifactId>marketplace</artifactId>
+        <version>${marketplace.sample.version}</version>
+        <type>zip</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <repositories>
+    <repository>
+      <id>public</id>
+      <url>http://maven.nuxeo.org/nexus/content/groups/public</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>public-snapshot</id>
+      <url>http://maven.nuxeo.org/nexus/content/groups/public-snapshot</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <updatePolicy>always</updatePolicy>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <scm>
+    <connection>scm:git:git://github.com/nuxeo/nuxeo-jenkins-report.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:nuxeo/nuxeo-jenkins-report.git</developerConnection>
+    <url>https://github.com/nuxeo/nuxeo-jenkins-report</url>
+  </scm>
+
+</project>

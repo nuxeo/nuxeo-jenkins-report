@@ -1,0 +1,1950 @@
+{
+  "description" : null,
+  "jobs" : [
+    {
+      "name" : "addons-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_FT-nuxeo-platform-error-web-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_FT-nuxeo-platform-error-web-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_FT-nuxeo-platform-faceted-search-master-jboss",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_FT-nuxeo-platform-faceted-search-master-jboss/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_FT-nuxeo-platform-faceted-search-master-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_FT-nuxeo-platform-faceted-search-master-tomcat/",
+      "color" : "red"
+    },
+    {
+      "name" : "addons_FT-nuxeo-platform-forms-layout-demo-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_FT-nuxeo-platform-forms-layout-demo-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_FT-nuxeo-rss-reader-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_FT-nuxeo-rss-reader-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_FT_nuxeo-core-binarymanager-s3-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_FT_nuxeo-core-binarymanager-s3-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_FT_nuxeo-correspondence-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_FT_nuxeo-correspondence-master/",
+      "color" : "yellow"
+    },
+    {
+      "name" : "addons_FT_nuxeo-diff-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_FT_nuxeo-diff-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_FT_nuxeo-gsa-connector-default-jboss",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_FT_nuxeo-gsa-connector-default-jboss/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_FT_nuxeo-gsa-connector-default-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_FT_nuxeo-gsa-connector-default-tomcat/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_FT_nuxeo-jbpm-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_FT_nuxeo-jbpm-master/",
+      "color" : "red"
+    },
+    {
+      "name" : "addons_FT_nuxeo-platform-document-routing-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_FT_nuxeo-platform-document-routing-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_FT_nuxeo-web-mobile-dm-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_FT_nuxeo-web-mobile-dm-master/",
+      "color" : "yellow"
+    },
+    {
+      "name" : "addons_nuxeo-activity-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-activity-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-agenda-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-agenda-5.6.0/",
+      "color" : "blue_anime"
+    },
+    {
+      "name" : "addons_nuxeo-apidoc-server-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-apidoc-server-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-apidoc-server-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-apidoc-server-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-apidoc-server-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-apidoc-server-5.6.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-birt-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-birt-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-birt-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-birt-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-birt-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-birt-5.5.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-birt-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-birt-5.6.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-chemistry-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-chemistry-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-chemistry-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-chemistry-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-chemistry-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-chemistry-5.5.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-chemistry-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-chemistry-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-cmf-1.8.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-cmf-1.8.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-cmf-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-cmf-5.5.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-cmf-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-cmf-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-core-binarymanager-s3-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-core-binarymanager-s3-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-core-binarymanager-sql-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-core-binarymanager-sql-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-core-binarymanager-sql-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-core-binarymanager-sql-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-core-binarymanager-sql-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-core-binarymanager-sql-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-core-binarymanager-sql-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-core-binarymanager-sql-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-correspondence-marianne-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-correspondence-marianne-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-correspondence-marianne-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-correspondence-marianne-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-dam-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-dam-5.5.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-dam-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-dam-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-diff-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-diff-5.6.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-digital-signature-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-digital-signature-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-digital-signature-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-digital-signature-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-exalead-connector-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-exalead-connector-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-exalead-connector-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-exalead-connector-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-exalead-connector-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-exalead-connector-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-filesystem-connectors-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-filesystem-connectors-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-filesystem-connectors-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-filesystem-connectors-5.5.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-filesystem-connectors-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-filesystem-connectors-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-flavors-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-flavors-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-flavors-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-flavors-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-gsa-connector-default",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-gsa-connector-default/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-http-client-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-http-client-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-http-client-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-http-client-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-http-client-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-http-client-5.5.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-http-client-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-http-client-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-jboss-jca-configurator-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-jboss-jca-configurator-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-jboss-jca-configurator-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-jboss-jca-configurator-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-jboss-jca-configurator-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-jboss-jca-configurator-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-jboss-jca-configurator-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-jboss-jca-configurator-5.6.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-multi-tenant",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-multi-tenant/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-multi-tenant-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-multi-tenant-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-newsml-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-newsml-master/",
+      "color" : "blue_anime"
+    },
+    {
+      "name" : "addons_nuxeo-opensocial-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-opensocial-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-opensocial-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-opensocial-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-opensocial-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-opensocial-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-audio-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-audio-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-audio-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-audio-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-audio-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-audio-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-audio-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-audio-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-audit-web-access-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-audit-web-access-5.6.0/",
+      "color" : "grey"
+    },
+    {
+      "name" : "addons_nuxeo-platform-categorization-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-categorization-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-categorization-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-categorization-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-categorization-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-categorization-5.5.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-platform-categorization-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-categorization-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-classification-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-classification-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-classification-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-classification-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-classification-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-classification-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-classification-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-classification-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-document-routing-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-document-routing-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-document-routing-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-document-routing-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-document-routing-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-document-routing-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-documentLink-5.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-documentLink-5.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-dynsearch-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-dynsearch-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-error-web-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-error-web-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-exalead-connector-5.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-exalead-connector-5.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-faceted-search-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-faceted-search-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-faceted-search-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-faceted-search-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-faceted-search-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-faceted-search-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-faceted-search-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-faceted-search-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-filemanager-io-plugin-5.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-filemanager-io-plugin-5.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-flex-1.2-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-flex-1.2-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-flex-1.2-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-flex-1.2-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-forms-layout-demo-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-forms-layout-demo-5.6.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-platform-gwt-5.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-gwt-5.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-high-availability-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-high-availability-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-importer-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-importer-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-importer-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-importer-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-importer-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-importer-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-importer-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-importer-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-indexing-gateway-5.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-indexing-gateway-5.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-indexing-gateway-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-indexing-gateway-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-indexing-gateway-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-indexing-gateway-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-indexing-gateway-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-indexing-gateway-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-intuition-5.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-intuition-5.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-intuition-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-intuition-5.6.0/",
+      "color" : "grey"
+    },
+    {
+      "name" : "addons_nuxeo-platform-intuition-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-intuition-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-jbpm-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-jbpm-5.6.0/",
+      "color" : "aborted_anime"
+    },
+    {
+      "name" : "addons_nuxeo-platform-lang-ext-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-lang-ext-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-lang-ext-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-lang-ext-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-lang-ext-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-lang-ext-5.5.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-platform-lang-ext-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-lang-ext-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-login-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-login-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-login-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-login-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-login-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-login-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-login-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-login-5.6.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-platform-nxwss-rootfilter-5.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-nxwss-rootfilter-5.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-rendition-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-rendition-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-rendition-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-rendition-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-rendition-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-rendition-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-replication-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-replication-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-replication-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-replication-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-replication-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-replication-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-seam-pdf-5.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-seam-pdf-5.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-semantic-entities-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-semantic-entities-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-semantic-entities-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-semantic-entities-5.5.0/",
+      "color" : "red"
+    },
+    {
+      "name" : "addons_nuxeo-platform-semantic-entities-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-semantic-entities-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-shibboleth-groups-web-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-shibboleth-groups-web-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-shibboleth-groups-web-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-shibboleth-groups-web-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-shibboleth-groups-web-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-shibboleth-groups-web-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-shibboleth-groups-web-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-shibboleth-groups-web-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-smart-search-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-smart-search-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-smart-search-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-smart-search-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-smart-search-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-smart-search-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-smart-search-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-smart-search-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-splitpane-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-splitpane-5.6.0/",
+      "color" : "grey"
+    },
+    {
+      "name" : "addons_nuxeo-platform-suggestbox-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-suggestbox-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-suggestbox-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-suggestbox-5.6.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-platform-sync-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-sync-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-sync-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-sync-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-sync-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-sync-5.5.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-platform-sync-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-sync-5.6.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-platform-user-dashboard-compat-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-user-dashboard-compat-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-user-dashboard-compat-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-user-dashboard-compat-5.5.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-platform-user-dashboard-compat-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-user-dashboard-compat-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-user-registration-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-user-registration-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-user-registration-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-user-registration-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-user-registration-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-user-registration-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-users-management-compat-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-users-management-compat-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-users-management-compat-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-users-management-compat-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-users-management-compat-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-users-management-compat-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-video-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-video-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-video-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-video-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-video-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-video-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-platform-video-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-platform-video-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-poll-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-poll-5.5.0/",
+      "color" : "red"
+    },
+    {
+      "name" : "addons_nuxeo-poll-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-poll-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-portlets-5.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-portlets-5.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-quota-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-quota-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-quota-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-quota-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-rating-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-rating-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-rss-reader-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-rss-reader-5.5.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-rss-reader-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-rss-reader-5.6.0/",
+      "color" : "red_anime"
+    },
+    {
+      "name" : "addons_nuxeo-sample-project-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-sample-project-5.6.0/",
+      "color" : "grey"
+    },
+    {
+      "name" : "addons_nuxeo-sample-project-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-sample-project-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-samples-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-samples-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-shell-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-shell-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-shell-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-shell-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-shell-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-shell-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-shell-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-shell-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-signature-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-signature-5.6.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-social-collaboration-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-social-collaboration-5.5.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-social-collaboration-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-social-collaboration-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-template-rendering-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-template-rendering-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-user-center-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-user-center-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-user-center-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-user-center-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-user-center-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-user-center-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-web-embedded-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-web-embedded-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-web-embedded-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-web-embedded-5.6.0/",
+      "color" : "grey"
+    },
+    {
+      "name" : "addons_nuxeo-web-embedded-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-web-embedded-master/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "addons_nuxeo-web-mobile-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-web-mobile-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "addons_nuxeo-web-mobile-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/addons_nuxeo-web-mobile-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "apricot-libs",
+      "url" : "https://qa.nuxeo.org/jenkins/job/apricot-libs/",
+      "color" : "blue"
+    },
+    {
+      "name" : "daisydiff",
+      "url" : "https://qa.nuxeo.org/jenkins/job/daisydiff/",
+      "color" : "blue"
+    },
+    {
+      "name" : "deploy-nuxeo-connect-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/deploy-nuxeo-connect-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "deploy-nuxeo-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/deploy-nuxeo-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "deploy-nuxeo-sds-5.3-ondemand",
+      "url" : "https://qa.nuxeo.org/jenkins/job/deploy-nuxeo-sds-5.3-ondemand/",
+      "color" : "blue"
+    },
+    {
+      "name" : "deploy-nuxeo-searchcenter-5.3",
+      "url" : "https://qa.nuxeo.org/jenkins/job/deploy-nuxeo-searchcenter-5.3/",
+      "color" : "blue"
+    },
+    {
+      "name" : "desktop-integration_nuxeo-dotnet-rest-client",
+      "url" : "https://qa.nuxeo.org/jenkins/job/desktop-integration_nuxeo-dotnet-rest-client/",
+      "color" : "blue"
+    },
+    {
+      "name" : "desktop-integration_nuxeo-dragdrop-ff",
+      "url" : "https://qa.nuxeo.org/jenkins/job/desktop-integration_nuxeo-dragdrop-ff/",
+      "color" : "blue"
+    },
+    {
+      "name" : "desktop-integration_nuxeo-dragdrop-ie",
+      "url" : "https://qa.nuxeo.org/jenkins/job/desktop-integration_nuxeo-dragdrop-ie/",
+      "color" : "blue"
+    },
+    {
+      "name" : "desktop-integration_nuxeo-dragdrop_setup",
+      "url" : "https://qa.nuxeo.org/jenkins/job/desktop-integration_nuxeo-dragdrop_setup/",
+      "color" : "blue"
+    },
+    {
+      "name" : "desktop-integration_nuxeo-liveedit-develop",
+      "url" : "https://qa.nuxeo.org/jenkins/job/desktop-integration_nuxeo-liveedit-develop/",
+      "color" : "blue"
+    },
+    {
+      "name" : "desktop-integration_nuxeo-liveedit-ff",
+      "url" : "https://qa.nuxeo.org/jenkins/job/desktop-integration_nuxeo-liveedit-ff/",
+      "color" : "blue"
+    },
+    {
+      "name" : "desktop-integration_nuxeo-liveedit_setup",
+      "url" : "https://qa.nuxeo.org/jenkins/job/desktop-integration_nuxeo-liveedit_setup/",
+      "color" : "blue"
+    },
+    {
+      "name" : "desktop-integration_nuxeo-liveedit_setup_x64",
+      "url" : "https://qa.nuxeo.org/jenkins/job/desktop-integration_nuxeo-liveedit_setup_x64/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-5.4.1-selenium-dm-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.4.1-selenium-dm-tomcat/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-5.4.2-selenium-dm-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.4.2-selenium-dm-tomcat/",
+      "color" : "yellow"
+    },
+    {
+      "name" : "FT-nuxeo-5.4.2-webdriver-dm-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.4.2-webdriver-dm-tomcat/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-5.5.0-selenium-dm-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.5.0-selenium-dm-tomcat/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-5.5.0-webdriver-dm-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.5.0-webdriver-dm-tomcat/",
+      "color" : "red"
+    },
+    {
+      "name" : "FT-nuxeo-5.6.0-funkload-dm-tomcat-multidb",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-funkload-dm-tomcat-multidb/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-5.6.0-selenium-dm-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/",
+      "color" : "yellow"
+    },
+    {
+      "name" : "FT-nuxeo-5.6.0-webdriver-dm-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-webdriver-dm-tomcat/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-5.6.0-webdriver-dm-tomcat-multiosdb",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-webdriver-dm-tomcat-multiosdb/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-5.6.0-webdriver-tomcat-wizard-multios",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-webdriver-tomcat-wizard-multios/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-funkload-trend-reader",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-funkload-trend-reader/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-funkload-trend-writer",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-funkload-trend-writer/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-bench-dm-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-bench-dm-tomcat/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-funkload-bench",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-funkload-bench/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-funkload-bench-archive",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-funkload-bench-archive/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-funkload-cmis-bench",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-funkload-cmis-bench/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-funkload-dm-tomcat-multidb",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-funkload-dm-tomcat-multidb/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-funkload-longevity-bench",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-funkload-longevity-bench/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-selenium-cap-jboss",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-selenium-cap-jboss/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-selenium-cap-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-selenium-cap-tomcat/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-selenium-cap-tomcat_permanentCheck",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-selenium-cap-tomcat_permanentCheck/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-selenium-cmf-tomcat-1.8.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-selenium-cmf-tomcat-1.8.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-selenium-dam-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-selenium-dam-tomcat/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-selenium-dam-tomcat-windows",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-selenium-dam-tomcat-windows/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-selenium-dam-tomcat_permanentCheck",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-selenium-dam-tomcat_permanentCheck/",
+      "color" : "red"
+    },
+    {
+      "name" : "FT-nuxeo-master-selenium-dm-jboss",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-selenium-dm-jboss/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-selenium-dm-jboss_permanentCheck",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-selenium-dm-jboss_permanentCheck/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-selenium-dm-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-selenium-dm-tomcat/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-selenium-dm-tomcat-multiosdb",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-selenium-dm-tomcat-multiosdb/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-selenium-dm-tomcat-windows",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-selenium-dm-tomcat-windows/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-selenium-dm-tomcat_permanentCheck",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-selenium-dm-tomcat_permanentCheck/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-selenium-social-collaboration-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-selenium-social-collaboration-tomcat/",
+      "color" : "yellow"
+    },
+    {
+      "name" : "FT-nuxeo-master-selenium-social-collaboration-tomcat-windows",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-selenium-social-collaboration-tomcat-windows/",
+      "color" : "red"
+    },
+    {
+      "name" : "FT-nuxeo-master-selenium-social-collaboration-tomcat_permanentCheck",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-selenium-social-collaboration-tomcat_permanentCheck/",
+      "color" : "yellow"
+    },
+    {
+      "name" : "FT-nuxeo-master-webdriver-dm-jboss",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-webdriver-dm-jboss/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-webdriver-dm-jboss_permanentCheck",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-webdriver-dm-jboss_permanentCheck/",
+      "color" : "yellow"
+    },
+    {
+      "name" : "FT-nuxeo-master-webdriver-dm-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-webdriver-dm-tomcat/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-webdriver-dm-tomcat-multiosdb",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-webdriver-dm-tomcat-multiosdb/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-webdriver-dm-tomcat-windows",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-webdriver-dm-tomcat-windows/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-webdriver-dm-tomcat_permanentCheck",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-webdriver-dm-tomcat_permanentCheck/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-webdriver-tomcat-wizard-multios",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-webdriver-tomcat-wizard-multios/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-webdriver-tomcat-wizard-multiwindows",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-webdriver-tomcat-wizard-multiwindows/",
+      "color" : "blue"
+    },
+    {
+      "name" : "FT-nuxeo-master-webdriver-tomcat-wizard_permanentCheck",
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-master-webdriver-tomcat-wizard_permanentCheck/",
+      "color" : "red"
+    },
+    {
+      "name" : "IT-logchart-report-builder",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-logchart-report-builder/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-custom-bench",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-custom-bench/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-drive-master-linux",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-drive-master-linux/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-drive-master-windows-msibuild",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-drive-master-windows-msibuild/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-funkload-multi-benchmarks",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-funkload-multi-benchmarks/",
+      "color" : "grey"
+    },
+    {
+      "name" : "IT-nuxeo-master-build",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-build/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-master-build-debian",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-build-debian/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-master-build-windows",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-build-windows/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-master-mass-import",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-mass-import/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-master-tests-cap-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-tests-cap-tomcat/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-master-tests-dam-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-tests-dam-tomcat/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-master-tests-dm-jboss",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-tests-dm-jboss/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-master-tests-dm-jboss-cluster",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-tests-dm-jboss-cluster/",
+      "color" : "yellow"
+    },
+    {
+      "name" : "IT-nuxeo-master-tests-dm-jboss-mysql",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-tests-dm-jboss-mysql/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-master-tests-dm-jboss-openjdk6",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-tests-dm-jboss-openjdk6/",
+      "color" : "red"
+    },
+    {
+      "name" : "IT-nuxeo-master-tests-dm-jboss-oracle10",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-tests-dm-jboss-oracle10/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-master-tests-dm-jboss-oracle11",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-tests-dm-jboss-oracle11/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-master-tests-dm-jboss-postgresql",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-tests-dm-jboss-postgresql/",
+      "color" : "yellow"
+    },
+    {
+      "name" : "IT-nuxeo-master-tests-dm-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-tests-dm-tomcat/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-master-tests-dm-tomcat-jre",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-tests-dm-tomcat-jre/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-master-tests-dm-tomcat-mysql",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-tests-dm-tomcat-mysql/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-master-tests-dm-tomcat-openjdk6",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-tests-dm-tomcat-openjdk6/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-master-tests-dm-tomcat-openjdk7",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-tests-dm-tomcat-openjdk7/",
+      "color" : "red"
+    },
+    {
+      "name" : "IT-nuxeo-master-tests-dm-tomcat-oracle10",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-tests-dm-tomcat-oracle10/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-master-tests-dm-tomcat-oracle11",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-tests-dm-tomcat-oracle11/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-master-tests-dm-tomcat-postgresql",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-tests-dm-tomcat-postgresql/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-nuxeo-master-tests-social-collaboration-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-nuxeo-master-tests-social-collaboration-tomcat/",
+      "color" : "yellow"
+    },
+    {
+      "name" : "IT-release-on-demand-build",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-release-on-demand-build/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-release-on-demand-build-jdk5",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-release-on-demand-build-jdk5/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-release-on-demand-tests-cap-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-release-on-demand-tests-cap-tomcat/",
+      "color" : "blue"
+    },
+    {
+      "name" : "IT-release-on-demand-tests-dm-jboss",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-release-on-demand-tests-dm-jboss/",
+      "color" : "red"
+    },
+    {
+      "name" : "IT-release-on-demand-tests-dm-tomcat",
+      "url" : "https://qa.nuxeo.org/jenkins/job/IT-release-on-demand-tests-dm-tomcat/",
+      "color" : "blue"
+    },
+    {
+      "name" : "jodconverter-3.0-NX",
+      "url" : "https://qa.nuxeo.org/jenkins/job/jodconverter-3.0-NX/",
+      "color" : "blue"
+    },
+    {
+      "name" : "jodconverter-3.0-NX-windows",
+      "url" : "https://qa.nuxeo.org/jenkins/job/jodconverter-3.0-NX-windows/",
+      "color" : "blue"
+    },
+    {
+      "name" : "join-FT-nuxeo-master_permanentChecks",
+      "url" : "https://qa.nuxeo.org/jenkins/job/join-FT-nuxeo-master_permanentChecks/",
+      "color" : "blue"
+    },
+    {
+      "name" : "join-IT-nuxeo-master_tests",
+      "url" : "https://qa.nuxeo.org/jenkins/job/join-IT-nuxeo-master_tests/",
+      "color" : "blue"
+    },
+    {
+      "name" : "marketplace_nuxeo-sample-project-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/marketplace_nuxeo-sample-project-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nexus-sync-releases",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nexus-sync-releases/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nexus-sync-snapshots",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nexus-sync-snapshots/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-5.3.2-fullbuild",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-5.3.2-fullbuild/",
+      "color" : "yellow"
+    },
+    {
+      "name" : "nuxeo-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-5.4.2-I20110404_0115",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-5.4.2-I20110404_0115/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-android-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-android-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-apogee-2.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-apogee-2.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-common-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-common-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-common-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-common-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-common-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-common-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-common-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-common-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-common-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-common-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-connect-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-connect-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-core-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-core-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-core-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-core-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-core-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-core-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-core-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-core-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-core-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-core-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-directory-connector-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-directory-connector-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-distribution-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-distribution-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-distribution-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-distribution-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-distribution-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-distribution-5.5.0/",
+      "color" : "red"
+    },
+    {
+      "name" : "nuxeo-distribution-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-distribution-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-distribution-izpack-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-distribution-izpack-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-distribution-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-distribution-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-dm-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-dm-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-dm-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-dm-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-dm-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-dm-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-dm-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-dm-5.6.0/",
+      "color" : "blue_anime"
+    },
+    {
+      "name" : "nuxeo-dm-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-dm-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-doc",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-doc/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-features-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-features-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-features-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-features-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-features-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-features-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-features-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-features-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-features-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-features-master/",
+      "color" : "blue_anime"
+    },
+    {
+      "name" : "nuxeo-ide-1.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-ide-1.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-ide-1.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-ide-1.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-ide-1.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-ide-1.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-ide-release",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-ide-release/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-ide-studio-0.0.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-ide-studio-0.0.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-jsf-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-jsf-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-jsf-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-jsf-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-jsf-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-jsf-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-jsf-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-jsf-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-jsf-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-jsf-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-master-fullbuild-daily",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-master-fullbuild-daily/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-master-fullbuild-openjdk6",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-master-fullbuild-openjdk6/",
+      "color" : "yellow"
+    },
+    {
+      "name" : "nuxeo-master-fullbuild-openjdk7",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-master-fullbuild-openjdk7/",
+      "color" : "yellow"
+    },
+    {
+      "name" : "nuxeo-master-fullbuild-part1-multidb-linux",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-master-fullbuild-part1-multidb-linux/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "nuxeo-master-fullbuild-part1-multidb-windows",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-master-fullbuild-part1-multidb-windows/",
+      "color" : "yellow"
+    },
+    {
+      "name" : "nuxeo-master-fullbuild-part2-distribution-multios",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-master-fullbuild-part2-distribution-multios/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-master-fullbuild-permanentCheck",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-master-fullbuild-permanentCheck/",
+      "color" : "red_anime"
+    },
+    {
+      "name" : "nuxeo-master-fullbuild-weekly",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-master-fullbuild-weekly/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-master-versions",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-master-versions/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-packaging-ondemand",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-packaging-ondemand/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-rm",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-rm/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-runtime-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-runtime-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-runtime-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-runtime-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-runtime-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-runtime-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-runtime-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-runtime-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-runtime-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-runtime-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-searchcenter-5.3",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-searchcenter-5.3/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-services-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-services-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-services-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-services-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-services-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-services-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-services-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-services-5.6.0/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "nuxeo-services-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-services-master/",
+      "color" : "aborted"
+    },
+    {
+      "name" : "nuxeo-theme-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-theme-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-theme-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-theme-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-theme-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-theme-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-theme-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-theme-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-theme-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-theme-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-tools-cloudformation-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-tools-cloudformation-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-webengine-5.4.1",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-webengine-5.4.1/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-webengine-5.4.2",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-webengine-5.4.2/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-webengine-5.5.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-webengine-5.5.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-webengine-5.6.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-webengine-5.6.0/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-webengine-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-webengine-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-wiki-checks",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-wiki-checks/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo-winpkg-links-check",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-winpkg-links-check/",
+      "color" : "blue"
+    },
+    {
+      "name" : "nuxeo_cookbook-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo_cookbook-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "ondemand-testandpush",
+      "url" : "https://qa.nuxeo.org/jenkins/job/ondemand-testandpush/",
+      "color" : "blue"
+    },
+    {
+      "name" : "ondemand-testandpush-3",
+      "url" : "https://qa.nuxeo.org/jenkins/job/ondemand-testandpush-3/",
+      "color" : "grey"
+    },
+    {
+      "name" : "ondemand-testandpush-atchertchian",
+      "url" : "https://qa.nuxeo.org/jenkins/job/ondemand-testandpush-atchertchian/",
+      "color" : "red"
+    },
+    {
+      "name" : "ondemand-testandpush-bdelbosc",
+      "url" : "https://qa.nuxeo.org/jenkins/job/ondemand-testandpush-bdelbosc/",
+      "color" : "red"
+    },
+    {
+      "name" : "ondemand-testandpush-jcarsique",
+      "url" : "https://qa.nuxeo.org/jenkins/job/ondemand-testandpush-jcarsique/",
+      "color" : "grey"
+    },
+    {
+      "name" : "ondemand-testandpush-troger",
+      "url" : "https://qa.nuxeo.org/jenkins/job/ondemand-testandpush-troger/",
+      "color" : "red"
+    },
+    {
+      "name" : "org.eclipse.apricot-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/org.eclipse.apricot-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "org.eclipse.equinox.p2.cudf-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/org.eclipse.equinox.p2.cudf-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "reset-chipolata-slave",
+      "url" : "https://qa.nuxeo.org/jenkins/job/reset-chipolata-slave/",
+      "color" : "blue"
+    },
+    {
+      "name" : "sandbox_easybookmark-1.0",
+      "url" : "https://qa.nuxeo.org/jenkins/job/sandbox_easybookmark-1.0/",
+      "color" : "grey"
+    },
+    {
+      "name" : "sandbox_nuxeo-platform-webpublisher-5.3",
+      "url" : "https://qa.nuxeo.org/jenkins/job/sandbox_nuxeo-platform-webpublisher-5.3/",
+      "color" : "blue"
+    },
+    {
+      "name" : "slave-repositories-cleanup",
+      "url" : "https://qa.nuxeo.org/jenkins/job/slave-repositories-cleanup/",
+      "color" : "blue"
+    },
+    {
+      "name" : "slave-test",
+      "url" : "https://qa.nuxeo.org/jenkins/job/slave-test/",
+      "color" : "blue"
+    },
+    {
+      "name" : "test-codehaus-Launcher",
+      "url" : "https://qa.nuxeo.org/jenkins/job/test-codehaus-Launcher/",
+      "color" : "blue"
+    },
+    {
+      "name" : "testauth",
+      "url" : "https://qa.nuxeo.org/jenkins/job/testauth/",
+      "color" : "grey"
+    },
+    {
+      "name" : "tools_maven-nuxeo-plugin-tip",
+      "url" : "https://qa.nuxeo.org/jenkins/job/tools_maven-nuxeo-plugin-tip/",
+      "color" : "blue"
+    },
+    {
+      "name" : "tools_nuxeo-ant-tasks-tip",
+      "url" : "https://qa.nuxeo.org/jenkins/job/tools_nuxeo-ant-tasks-tip/",
+      "color" : "blue"
+    },
+    {
+      "name" : "tools_nuxeo-apt-extension-tip",
+      "url" : "https://qa.nuxeo.org/jenkins/job/tools_nuxeo-apt-extension-tip/",
+      "color" : "blue"
+    },
+    {
+      "name" : "tools_nuxeo-distribution-tools-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/tools_nuxeo-distribution-tools-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "tools_nuxeo-ftest-master",
+      "url" : "https://qa.nuxeo.org/jenkins/job/tools_nuxeo-ftest-master/",
+      "color" : "blue"
+    },
+    {
+      "name" : "tools_nuxeo-jboss-interceptors-default",
+      "url" : "https://qa.nuxeo.org/jenkins/job/tools_nuxeo-jboss-interceptors-default/",
+      "color" : "blue"
+    },
+    {
+      "name" : "tools_nuxeo-webengine-apt-1.3",
+      "url" : "https://qa.nuxeo.org/jenkins/job/tools_nuxeo-webengine-apt-1.3/",
+      "color" : "blue"
+    }
+  ],
+  "name" : "Dashboard",
+  "property" : [
+    
+  ],
+  "url" : "https://qa.nuxeo.org/jenkins/"
+}

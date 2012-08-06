@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: NuxeoIntranet Web Module
+Bundle-SymbolicName: com.nuxeo.intranet.web
+Bundle-Localization: plugin
+Bundle-Vendor: Nuxeo
+Bundle-Category: web
