@@ -6,7 +6,7 @@
   <taskdef resource="org/nuxeo/build/artifact/antlib.xml"
            uri="urn:nuxeo-artifact" />
 
-  <target name="build" description="Build Nuxeo sample Marketplace package">
+  <target name="build" description="Build Nuxeo Jenkins Report Marketplace package">
     <tstamp />
     <delete failonerror="false"
             dir="${maven.project.build.directory}/marketplace" />
@@ -19,10 +19,10 @@
       </filterset>
     </copy>
 
-    <copy todir="${maven.project.build.directory}/marketplace/bundles/">
+    <copy todir="${maven.project.build.directory}/marketplace/install/bundles/">
       <artifact:resolveFile key="nuxeo-studio:nuxeo-jenkins-report:${nuxeo.jenkins.studio.version}:jar" />
     </copy>
-    <copy todir="${maven.project.build.directory}/marketplace/bundles/">
+    <copy todir="${maven.project.build.directory}/marketplace/install/bundles/">
       <artifact:resolveFile key="com.nuxeo.jenkins.report:nuxeo-jenkins-report-web:${nuxeo.jenkins.version}:jar" />
     </copy>
 

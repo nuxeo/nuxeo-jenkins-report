@@ -1,5 +1,5 @@
 <!-- See documentation at http://doc.nuxeo.com/x/HgIz -->
-<package type="addon" name="nuxeo-sample" version="@VERSION@">
+<package type="addon" name="nuxeo-jenkins-report" version="@VERSION@">
   <title>Nuxeo Jenkins Report</title>
   <description>
     <p>This addon adds the "Nuxeo Jenkins Report" functionality to Nuxeo.</p>
