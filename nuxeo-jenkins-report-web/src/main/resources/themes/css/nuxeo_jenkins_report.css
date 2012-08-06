@@ -1,0 +1,17 @@
+.jenkinsReportWarningMessage {
+  background-color: "warning (__FLAVOR__ background)";
+  border-color: "error (__FLAVOR__ border)";
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0 5px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  color: #000;
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: .8em 1.2em;
+  font-weight: bold;
+  font-size: 1.2em;
+  border-color: "error (__FLAVOR__ border)" border-width:     1px;
+  border-width: 1px;
+}

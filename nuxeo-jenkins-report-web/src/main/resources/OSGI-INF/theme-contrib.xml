@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<component name="com.nuxeo.jenkins.report.theme">
+
+  <documentation>
+    Additional CSS files for the addon, not put on Studio side
+    because branding is not yet adapted to it.
+  </documentation>
+
+  <require>org.nuxeo.theme.nuxeo.default</require>
+
+  <extension target="org.nuxeo.theme.styling.service" point="pages">
+    <themePage name="galaxy/default">
+      <styles append="true">
+        <style>nuxeo_jenkins_report</style>
+      </styles>
+    </themePage>
+  </extension>
+
+  <extension target="org.nuxeo.theme.styling.service" point="styles">
+    <style name="nuxeo_jenkins_report">
+      <src>themes/css/nuxeo_jenkins_report.css</src>
+    </style>
+  </extension>
+
+</component>
