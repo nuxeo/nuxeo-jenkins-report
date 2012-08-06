@@ -1,8 +1,11 @@
-nuxeo-jenkins-report
+====================
+Nuxeo Jenkins Report
 ====================
 
-Nuxeo Jenkins report Market Place package allows you to save reports
-about Jenkins status in Nuxeo.
+This module allows you to save reports about Jenkins status in Nuxeo.
+
+Features
+========
 
 You can create "Jenkins Reports Container" documents. Each container
 is bound to a Jenkins view so that build status can be retrieved from
