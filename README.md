@@ -1,11 +1,8 @@
-====================
-Nuxeo Jenkins Report
-====================
+# Nuxeo Jenkins Report
 
 This module allows you to save reports about Jenkins status in Nuxeo.
 
-Features
-========
+## Features
 
 You can create "Jenkins Reports Container" documents. Each container
 is bound to a Jenkins view so that build status can be retrieved from
@@ -31,15 +28,25 @@ The Market Place package is containing:
   component that will convert Jenkins json API response data into the
   Nuxeo document typology.
 
-Build
-=====
+## Build
 
 run:
 
     $ mvn clean install
 
-Install
-=======
+## Install
 
 Upload the generated Market Place package in the Nuxeo Update Center.
 
+## About Nuxeo
+
+Nuxeo provides a modular, extensible Java-based [open source software platform for enterprise content management] [1] and packaged
+applications for [document management] [2], [digital asset management] [3] and [case management] [4]. Designed by developers for developers,
+the Nuxeo platform offers a modern architecture, a powerful plug-in model and extensive packaging capabilities for building content applications.
+
+[1]: http://www.nuxeo.com/en/products/ep
+[2]: http://www.nuxeo.com/en/products/document-management
+[3]: http://www.nuxeo.com/en/products/dam
+[4]: http://www.nuxeo.com/en/products/case-management
+
+More information on: <http://www.nuxeo.com/>
