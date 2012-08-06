@@ -1,9 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <parent>
-    <groupId>org.nuxeo.ecm.distribution</groupId>
-    <artifactId>nuxeo-distribution</artifactId>
+    <groupId>org.nuxeo</groupId>
+    <artifactId>nuxeo-ecm</artifactId>
     <version>5.6-SNAPSHOT</version>
   </parent>
 
@@ -15,41 +16,50 @@
 
   <properties>
     <nuxeo.jenkins.version>1.0-SNAPSHOT</nuxeo.jenkins.version>
+    <nuxeo.jenkins.studio.version>0.0.0-SNAPSHOT</nuxeo.jenkins.studio.version>
   </properties>
 
   <modules>
     <module>nuxeo-jenkins-report-web</module>
-    <!--<module>marketplace</module>-->
+    <module>nuxeo-jenkins-report-mp</module>
   </modules>
 
   <!-- TODO -->
   <!--
-  <profiles>
+    <profiles>
     <profile>
-      <id>ftest</id>
-      <modules>
-        <module>ftest/webdriver</module>
-      </modules>
+    <id>ftest</id>
+    <modules>
+    <module>ftest/webdriver</module>
+    </modules>
     </profile>
-  </profiles>
+    </profiles>
   -->
 
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.nuxeo.marketplace.sample</groupId>
-        <artifactId>ear</artifactId>
-        <version>${marketplace.sample.version}</version>
-        <type>zip</type>
+        <groupId>nuxeo-studio</groupId>
+        <artifactId>nuxeo-jenkins-report</artifactId>
+        <version>${nuxeo.jenkins.studio.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.nuxeo.marketplace.sample</groupId>
-        <artifactId>marketplace</artifactId>
-        <version>${marketplace.sample.version}</version>
+        <groupId>com.nuxeo.jenkins.report</groupId>
+        <artifactId>nuxeo-jenkins-report-mp</artifactId>
+        <version>${nuxeo.jenkins.version}</version>
         <type>zip</type>
       </dependency>
     </dependencies>
   </dependencyManagement>
+
+  <developers>
+    <developer>
+      <id>Nuxeo</id>
+      <name>Nuxeo Developers Team</name>
+      <email>nuxeo-dev@lists.nuxeo.com</email>
+      <timezone>+1</timezone>
+    </developer>
+  </developers>
 
   <repositories>
     <repository>
@@ -67,6 +77,17 @@
       <url>http://maven.nuxeo.org/nexus/content/groups/public-snapshot</url>
       <releases>
         <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <updatePolicy>always</updatePolicy>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>nuxeo-studio</id>
+      <url>https://connect.nuxeo.com/nuxeo/site/studio/maven</url>
+      <releases>
+        <enabled>true</enabled>
       </releases>
       <snapshots>
         <updatePolicy>always</updatePolicy>
