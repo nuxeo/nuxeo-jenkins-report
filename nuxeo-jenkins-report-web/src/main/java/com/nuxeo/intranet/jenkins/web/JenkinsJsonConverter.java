@@ -56,7 +56,7 @@ public class JenkinsJsonConverter {
                             // retrieve additional info for each failing job,
                             // fetching the whole state in one query using the
                             // "depth" attribute is more costly
-                            JSONObject jsonBuild = fetcher.retrieveJSONObject(url
+                            JSONObject jsonBuild = fetcher.retrieveJSONObject(url.trim()
                                     + "lastBuild/api/json");
                             if (jsonBuild != null) {
                                 job.putAll(convertBuild(jsonBuild));
@@ -86,10 +86,7 @@ public class JenkinsJsonConverter {
                     if (claim.optBoolean("claimed")) {
                         build.put("claimer", claim.optString("claimedBy"));
                         String reason = claim.optString("reason");
-                        if ("null".equals(reason)) {
-                            reason = null;
-                        }
-                        if (reason != null) {
+                        if (!isEmpty(reason)) {
                             comment = "Claim reason: " + reason;
                         }
                     }
@@ -98,7 +95,7 @@ public class JenkinsJsonConverter {
             }
         }
         String description = jsonBuild.optString("description");
-        if (!StringUtils.isEmpty(description)) {
+        if (!isEmpty(description)) {
             if (comment != null) {
                 comment += "\n\n";
             } else {
@@ -114,8 +111,7 @@ public class JenkinsJsonConverter {
             for (Object jsonCulprit : jsonCulprits) {
                 if (jsonCulprit != null) {
                     String name = ((JSONObject) jsonCulprit).optString("fullName");
-                    if (name != null && !name.isEmpty()
-                            && !"jenkins".equals(name)) {
+                    if (!isEmpty(name) && !"jenkins".equals(name)) {
                         culprits.add(name);
                     }
                 }
@@ -126,4 +122,9 @@ public class JenkinsJsonConverter {
         build.put("type", jsonBuild.optString("result"));
         return build;
     }
+
+    protected static boolean isEmpty(String value) {
+        return StringUtils.isBlank(value) || "null".equals(value);
+    }
+
 }

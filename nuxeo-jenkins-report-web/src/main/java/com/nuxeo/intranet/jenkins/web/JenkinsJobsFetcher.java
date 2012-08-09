@@ -18,18 +18,14 @@ package com.nuxeo.intranet.jenkins.web;
 
 import static org.jboss.seam.ScopeType.EVENT;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.faces.component.UIComponent;
 import javax.faces.event.ActionEvent;
 
-import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import org.apache.commons.logging.Log;
@@ -85,14 +81,15 @@ public class JenkinsJobsFetcher implements Serializable {
         }
 
         try {
-            String jsonURL = jenkinsURL;
+            String jsonURL = jenkinsURL.trim();
             if (!jsonURL.endsWith("/")) {
                 jsonURL += "/";
             }
             jsonURL += "api/json";
 
             JSONObject json = retrieveJSONObject(jsonURL);
-            List<Map<String, Serializable>> jenkinsData = convertJenkinsResponseToDocumentData(json);
+            List<Map<String, Serializable>> jenkinsData = JenkinsJsonConverter.convertJobs(
+                    json, this);
 
             UIComponent component = event.getComponent();
             if (component == null) {
@@ -117,7 +114,7 @@ public class JenkinsJobsFetcher implements Serializable {
         }
     }
 
-    JSONObject retrieveJSONObject(String url) {
+    protected JSONObject retrieveJSONObject(String url) {
         if (url == null) {
             return null;
         }
@@ -138,78 +135,6 @@ public class JenkinsJobsFetcher implements Serializable {
                     url, e.getMessage()));
             return null;
         }
-    }
-
-    protected List<Map<String, Serializable>> convertJenkinsResponseToDocumentData(
-            JSONObject jsonObject) throws IOException {
-        List<Map<String, Serializable>> res = new ArrayList<Map<String, Serializable>>();
-        if (jsonObject != null) {
-            JSONArray jsonJobs = jsonObject.optJSONArray("jobs");
-            if (jsonJobs != null) {
-                for (Object jsonJob : jsonJobs) {
-                    String color = ((JSONObject) jsonJob).getString("color");
-                    if (color != null && !color.startsWith("blue")
-                            && !color.startsWith("grey")) {
-                        Map<String, Serializable> job = new HashMap<String, Serializable>();
-                        String url = ((JSONObject) jsonJob).getString("url");
-                        job.put("job_id",
-                                ((JSONObject) jsonJob).getString("name"));
-                        job.put("job_url", url);
-                        // retrieve additional info for each failing job,
-                        // fetching the whole state in one query using the
-                        // "depth" attribute is more costly
-                        if (url != null) {
-                            JSONObject jsonBuild = retrieveJSONObject(url
-                                    + "lastBuild/api/json");
-                            if (jsonBuild != null) {
-                                // get build number
-                                job.put("build_number",
-                                        String.valueOf(jsonBuild.optInt("number")));
-                                // get claim info
-                                JSONArray actions = jsonBuild.optJSONArray("actions");
-                                if (actions != null) {
-                                    for (Object jsonAction : actions) {
-                                        if (jsonAction != null
-                                                && ((JSONObject) jsonAction).has("claimed")) {
-                                            JSONObject claim = (JSONObject) jsonAction;
-                                            if (claim.optBoolean("claimed")) {
-                                                job.put("claimer",
-                                                        claim.optString("claimedBy"));
-                                                String reason = claim.optString("reason");
-                                                if ("null".equals(reason)) {
-                                                    reason = null;
-                                                }
-                                                job.put("comment", reason);
-                                            }
-                                            break;
-                                        }
-                                    }
-                                }
-                                // get culprits
-                                ArrayList<String> culprits = new ArrayList<String>();
-                                JSONArray jsonCulprits = jsonBuild.optJSONArray("culprits");
-                                if (jsonCulprits != null) {
-                                    for (Object jsonCulprit : jsonCulprits) {
-                                        if (jsonCulprit != null) {
-                                            String name = ((JSONObject) jsonCulprit).optString("fullName");
-                                            if (name != null && !name.isEmpty()
-                                                    && !"jenkins".equals(name)) {
-                                                culprits.add(name);
-                                            }
-                                        }
-                                    }
-                                }
-                                job.put("culprits", culprits);
-                                // get result
-                                job.put("type", jsonBuild.optString("result"));
-                            }
-                        }
-                        res.add(job);
-                    }
-                }
-            }
-        }
-        return res;
     }
 
 }
