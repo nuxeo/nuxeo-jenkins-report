@@ -12,6 +12,13 @@
   <packaging>zip</packaging>
   <name>Nuxeo Jenkins Report Marketplace package</name>
 
+  <dependencies>
+    <dependency>
+      <artifactId>nuxeo-jenkins-report-web</artifactId>
+      <groupId>com.nuxeo.jenkins.report</groupId>
+    </dependency>
+  </dependencies>
+
   <build>
     <plugins>
       <plugin>
