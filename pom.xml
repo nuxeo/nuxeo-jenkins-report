@@ -49,6 +49,11 @@
         <version>${nuxeo.jenkins.version}</version>
         <type>zip</type>
       </dependency>
+      <dependency>
+        <groupId>com.nuxeo.jenkins.report</groupId>
+        <artifactId>nuxeo-jenkins-report-web</artifactId>
+        <version>${nuxeo.jenkins.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
