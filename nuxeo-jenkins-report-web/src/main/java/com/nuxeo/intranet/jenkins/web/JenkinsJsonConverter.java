@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -57,7 +58,7 @@ public class JenkinsJsonConverter {
                             // fetching the whole state in one query using the
                             // "depth" attribute is more costly
                             JSONObject jsonBuild = fetcher.retrieveJSONObject(url.trim()
-                                    + "lastBuild/api/json");
+                                    + "lastCompletedBuild/api/json");
                             if (jsonBuild != null) {
                                 job.putAll(convertBuild(jsonBuild));
                             }
@@ -121,6 +122,44 @@ public class JenkinsJsonConverter {
         // get result
         build.put("type", jsonBuild.optString("result"));
         return build;
+    }
+
+    public static List<Map<String, Serializable>> mergeData(
+            List<Map<String, Serializable>> oldData,
+            List<Map<String, Serializable>> newData) {
+        // gather up all old info, and use a map for easier reference
+        HashMap<String, Map<String, Serializable>> res = new LinkedHashMap<String, Map<String, Serializable>>();
+        if (oldData != null) {
+            for (Map<String, Serializable> item : oldData) {
+                res.put((String) item.get("job_id"), item);
+            }
+        }
+        // add up new values and merge if already in the list existing
+        if (newData != null) {
+            for (Map<String, Serializable> item : newData) {
+                String id = (String) item.get("job_id");
+                String build_number = (String) item.get("build_number");
+                if (res.containsKey(id)) {
+                    Map<String, Serializable> oldItem = res.get(id);
+                    if (build_number != null
+                            && build_number.equals(String.valueOf(oldItem.get("build_number")))) {
+                        // already the same job => keep the old one
+                    } else {
+                        oldItem.put("updated_build_number", build_number);
+                        oldItem.put("updated_type", item.get("type"));
+                        // override claimer and comments
+                        oldItem.put("claimer", item.get("claimer"));
+                        oldItem.put("comment", item.get("comment"));
+                        oldItem.put("cause", item.get("code"));
+                        res.put(id, oldItem);
+                    }
+                } else {
+                    res.put(id, item);
+                }
+            }
+        }
+
+        return new ArrayList<Map<String, Serializable>>(res.values());
     }
 
     protected static boolean isEmpty(String value) {

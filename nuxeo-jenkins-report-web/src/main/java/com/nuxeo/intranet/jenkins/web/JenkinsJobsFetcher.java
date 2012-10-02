@@ -39,6 +39,7 @@ import org.jboss.seam.international.StatusMessage;
 import org.nuxeo.ecm.core.api.Blob;
 import org.nuxeo.ecm.core.api.impl.blob.URLBlob;
 import org.nuxeo.ecm.platform.ui.web.component.list.UIEditableList;
+import org.nuxeo.ecm.platform.ui.web.model.EditableModel;
 import org.nuxeo.ecm.platform.ui.web.util.ComponentUtils;
 
 /**
@@ -71,6 +72,7 @@ public class JenkinsJobsFetcher implements Serializable {
         facesMessages.addToControl(feedbackComponentId, severity, message);
     }
 
+    @SuppressWarnings("unchecked")
     public void fetchJobsToList(ActionEvent event) {
         // retrieve new values from URL first
         if (jenkinsURL == null) {
@@ -99,7 +101,10 @@ public class JenkinsJobsFetcher implements Serializable {
                     listComponentId, UIEditableList.class);
 
             if (list != null) {
-                list.getEditableModel().setWrappedData(jenkinsData);
+                EditableModel em = list.getEditableModel();
+                List<Map<String, Serializable>> oldData = (List<Map<String, Serializable>>) em.getWrappedData();
+                em.setWrappedData(JenkinsJsonConverter.mergeData(oldData,
+                        jenkinsData));
             }
 
             facesMessages.addToControl(feedbackComponentId,
