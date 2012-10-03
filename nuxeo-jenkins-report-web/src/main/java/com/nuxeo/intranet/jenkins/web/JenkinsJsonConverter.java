@@ -51,7 +51,8 @@ public class JenkinsJsonConverter {
                 for (Object jsonJob : jsonJobs) {
                     String color = ((JSONObject) jsonJob).getString("color");
                     if (color != null && !color.startsWith("blue")
-                            && !color.startsWith("grey")) {
+                            && !color.startsWith("grey")
+                            && !color.startsWith("disabled")) {
                         Map<String, Serializable> job = new HashMap<String, Serializable>();
                         String url = ((JSONObject) jsonJob).getString("url");
                         String jobId = ((JSONObject) jsonJob).getString("name");
