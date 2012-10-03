@@ -13,3 +13,7 @@
   font-weight: bold;
   font-size: 1.2em;
 }
+
+.jenkinsComment .boldColumn {
+  width: 20%;
+}
