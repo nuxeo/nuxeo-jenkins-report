@@ -75,4 +75,24 @@ public class TestJenkinsJsonConverter {
         assertEquals("Laurent Doguin <ldoguin@nuxeo.com>",
                 ((List) build.get("culprits")).get(0));
     }
+
+    @Test
+    public void testMultiOSDBBuildConverter() throws Exception {
+        InputStream stream = new FileInputStream(
+                FileUtils.getResourcePathFromContext("multiosdb_build.json"));
+        JSONObject json = JSONObject.fromObject(FileUtils.read(stream));
+
+        // use a null fetcher: each job info will not be retrieved
+        List<Map<String, Serializable>> builds = JenkinsJsonConverter.convertMultiOSDBJobs(
+                "FT-nuxeo-5.6.0-selenium-dm-tomcat", json, null);
+        assertNotNull(builds);
+        assertEquals(10, builds.size());
+        assertEquals(
+                "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/./Slave=MULTIDB_LINUX,dbprofile=default/",
+                builds.get(0).get("job_url"));
+        assertEquals(
+                "FT-nuxeo-5.6.0-selenium-dm-tomcat#Slave=MULTIDB_LINUX,dbprofile=default",
+                builds.get(0).get("job_id"));
+    }
+
 }
