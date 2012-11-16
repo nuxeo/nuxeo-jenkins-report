@@ -71,9 +71,11 @@ public class JenkinsJsonConverter {
                                         jsonBuild, fetcher);
                             }
                         }
-                        res.add(job);
-                        if (subJobs != null) {
+                        if (subJobs != null && !subJobs.isEmpty()) {
+                            // do not add the main job for multi jobs
                             res.addAll(subJobs);
+                        } else {
+                            res.add(job);
                         }
                     }
                 }
@@ -199,22 +201,41 @@ public class JenkinsJsonConverter {
                 res.put((String) item.get("job_id"), item);
             }
         }
-        // add up new values and merge if already in the list existing
+        // add up new values and merge if already in the existing list
         if (newData != null) {
             for (Map<String, Serializable> item : newData) {
                 String id = (String) item.get("job_id");
                 String build_number = (String) item.get("build_number");
                 if (res.containsKey(id)) {
                     Map<String, Serializable> oldItem = res.get(id);
+                    String oldBuildNumber = String.valueOf(oldItem.get("build_number"));
                     if (build_number != null
-                            && build_number.equals(String.valueOf(oldItem.get("build_number")))) {
-                        // already the same job => keep the old one
+                            && build_number.equals(oldBuildNumber)) {
+                        // already the same job => update claimer and comment
+                        // override claimer and comments
+                        oldItem.put("claimer", item.get("claimer"));
+                        oldItem.put("comment", item.get("comment"));
+                        res.put(id, oldItem);
                     } else {
                         oldItem.put("updated_build_number", build_number);
                         oldItem.put("updated_type", item.get("type"));
                         // override claimer and comments
                         oldItem.put("claimer", item.get("claimer"));
-                        oldItem.put("comment", item.get("comment"));
+                        // merge comment
+                        String oldComment = String.valueOf(oldItem.get("comment"));
+                        String newComent = String.valueOf(item.get("comment"));
+                        if (oldComment != null) {
+                            if (newComent != null
+                                    && !newComent.equals(oldComment)) {
+                                String mergedComment = String.format(
+                                        "Comments for build %s:\n%s\n\nComments for build %s:\n%s",
+                                        oldBuildNumber, oldComment,
+                                        build_number, newComent);
+                                oldItem.put("comment", mergedComment);
+                            }
+                        } else if (newComent != null) {
+                            oldItem.put("comment", newComent);
+                        }
                         oldItem.put("cause", item.get("code"));
                         res.put(id, oldItem);
                     }
