@@ -1,0 +1,166 @@
+{
+  "actions" : [
+    {
+      "causes" : [
+        {
+          "shortDescription" : "Started by upstream project \"nuxeo-distribution-master\" build number 871",
+          "upstreamBuild" : 871,
+          "upstreamProject" : "nuxeo-distribution-master",
+          "upstreamUrl" : "job/nuxeo-distribution-master/"
+        },
+        {
+          "shortDescription" : "Started by upstream project \"nuxeo-distribution-master\" build number 872",
+          "upstreamBuild" : 872,
+          "upstreamProject" : "nuxeo-distribution-master",
+          "upstreamUrl" : "job/nuxeo-distribution-master/"
+        }
+      ]
+    },
+    {
+      "mercurialNodeName" : "86fc5b39f7c40d0030b747ec0566c21c49af254a",
+      "mercurialRevisionNumber" : "9",
+      "subdir" : null
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "claimed" : true,
+      "claimedBy" : "mcedica",
+      "reason" : "checking with modified claim reason"
+    },
+    {
+      
+    },
+    {
+      "participants" : [
+        
+      ],
+      "scorecard" : {
+        "scores" : [
+          
+        ],
+        "totalPoints" : 0.0
+      }
+    }
+  ],
+  "artifacts" : [
+    {
+      "displayPath" : "dependency-tree.log",
+      "fileName" : "dependency-tree.log",
+      "relativePath" : "ear/target/dependency-tree.log"
+    },
+    {
+      "displayPath" : "result-corrSuite.html",
+      "fileName" : "result-corrSuite.html",
+      "relativePath" : "ftest/selenium/target/results/result-corrSuite.html"
+    },
+    {
+      "displayPath" : "selenium-debug.log",
+      "fileName" : "selenium-debug.log",
+      "relativePath" : "ftest/selenium/target/selenium-debug.log"
+    },
+    {
+      "displayPath" : "selenium.log",
+      "fileName" : "selenium.log",
+      "relativePath" : "ftest/selenium/target/selenium.log"
+    },
+    {
+      "displayPath" : "console.log",
+      "fileName" : "console.log",
+      "relativePath" : "ftest/selenium/target/tomcat/log/console.log"
+    },
+    {
+      "displayPath" : "nuxeo-error.log",
+      "fileName" : "nuxeo-error.log",
+      "relativePath" : "ftest/selenium/target/tomcat/log/nuxeo-error.log"
+    },
+    {
+      "displayPath" : "nuxeoctl.log",
+      "fileName" : "nuxeoctl.log",
+      "relativePath" : "ftest/selenium/target/tomcat/log/nuxeoctl.log"
+    },
+    {
+      "displayPath" : "server.log",
+      "fileName" : "server.log",
+      "relativePath" : "ftest/selenium/target/tomcat/log/server.log"
+    },
+    {
+      "displayPath" : "stderr.log",
+      "fileName" : "stderr.log",
+      "relativePath" : "ftest/selenium/target/tomcat/log/stderr.log"
+    },
+    {
+      "displayPath" : "nxserver/config/distribution.properties",
+      "fileName" : "distribution.properties",
+      "relativePath" : "ftest/selenium/target/tomcat/nxserver/config/distribution.properties"
+    },
+    {
+      "displayPath" : "derby.log",
+      "fileName" : "derby.log",
+      "relativePath" : "ftest/selenium/target/tomcat/nxserver/data/derby/derby.log"
+    },
+    {
+      "displayPath" : "installAfterRestart-CMF.log",
+      "fileName" : "installAfterRestart-CMF.log",
+      "relativePath" : "ftest/selenium/target/tomcat/nxserver/data/installAfterRestart-CMF.log"
+    },
+    {
+      "displayPath" : "installAfterRestart-DAM.log",
+      "fileName" : "installAfterRestart-DAM.log",
+      "relativePath" : "ftest/selenium/target/tomcat/nxserver/data/installAfterRestart-DAM.log"
+    },
+    {
+      "displayPath" : "installAfterRestart-DM.log",
+      "fileName" : "installAfterRestart-DM.log",
+      "relativePath" : "ftest/selenium/target/tomcat/nxserver/data/installAfterRestart-DM.log"
+    },
+    {
+      "displayPath" : "installAfterRestart-SC.log",
+      "fileName" : "installAfterRestart-SC.log",
+      "relativePath" : "ftest/selenium/target/tomcat/nxserver/data/installAfterRestart-SC.log"
+    },
+    {
+      "displayPath" : "common/config/distribution.properties",
+      "fileName" : "distribution.properties",
+      "relativePath" : "ftest/selenium/target/tomcat/templates/common/config/distribution.properties"
+    }
+  ],
+  "building" : false,
+  "description" : "test comment modified",
+  "duration" : 1259975,
+  "estimatedDuration" : 992170,
+  "fullDisplayName" : "addons_FT_nuxeo-correspondence-master #702",
+  "id" : "2012-08-03_07-50-38",
+  "keepLog" : false,
+  "number" : 702,
+  "result" : "UNSTABLE",
+  "timestamp" : 1343973038932,
+  "url" : "https://qa.nuxeo.org/jenkins/job/addons_FT_nuxeo-correspondence-master/702/",
+  "builtOn" : "bandersnatch",
+  "changeSet" : {
+    "items" : [
+      
+    ],
+    "kind" : "hg"
+  },
+  "culprits" : [
+    {
+      "absoluteUrl" : "https://qa.nuxeo.org/jenkins/user/Laurent%20Doguin%20_ldoguin@nuxeo.com_",
+      "fullName" : "Laurent Doguin <ldoguin@nuxeo.com>"
+    }
+  ],
+  "mavenArtifacts" : {
+    
+  },
+  "mavenVersionUsed" : "2.2.1"
+}
