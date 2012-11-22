@@ -18,6 +18,7 @@ package com.nuxeo.intranet.jenkins.json;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
+import static junit.framework.Assert.assertNull;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -49,7 +50,7 @@ public class TestJenkinsJsonConverter {
         JSONObject json = getJsonBuild("jobs.json");
         // use a null fetcher: each job info will not be retrieved
         List<Map<String, Serializable>> res = JenkinsJsonConverter.convertJobs(
-                json, null);
+                json, null, null);
         assertEquals(57, res.size());
 
         Map<String, Serializable> failing = res.get(0);
@@ -73,6 +74,7 @@ public class TestJenkinsJsonConverter {
         assertEquals("mcedica", build.get("claimer"));
         assertEquals("Claim reason: checking\n\nDescription: test comment",
                 build.get("comment"));
+        assertNull(build.get("updated_comment"));
         assertEquals(1, ((List) build.get("culprits")).size());
         assertEquals("Laurent Doguin <ldoguin@nuxeo.com>",
                 ((List) build.get("culprits")).get(0));
@@ -109,6 +111,7 @@ public class TestJenkinsJsonConverter {
         assertEquals(
                 "Claim reason: checking\n\n" + "Description: test comment",
                 mergedBuild.get("comment"));
+        assertNull(mergedBuild.get("updated_comment"));
         assertEquals(1, ((List) mergedBuild.get("culprits")).size());
         assertEquals("Laurent Doguin <ldoguin@nuxeo.com>",
                 ((List) mergedBuild.get("culprits")).get(0));
@@ -136,6 +139,7 @@ public class TestJenkinsJsonConverter {
         assertEquals("Claim reason: checking with modified claim reason\n\n"
                 + "Description: test comment modified",
                 mergedBuild.get("comment"));
+        assertNull(mergedBuild.get("updated_comment"));
         assertEquals(1, ((List) mergedBuild.get("culprits")).size());
         assertEquals("Laurent Doguin <ldoguin@nuxeo.com>",
                 ((List) mergedBuild.get("culprits")).get(0));
@@ -160,10 +164,12 @@ public class TestJenkinsJsonConverter {
         assertEquals("702", mergedBuild.get("build_number"));
         assertEquals("UNSTABLE", mergedBuild.get("type"));
         assertEquals("mcedica", mergedBuild.get("claimer"));
-        assertEquals("Comments for build 702:\n" + "Claim reason: checking\n\n"
-                + "Description: test comment\n\n" + "Comments for build 703:\n"
-                + "Claim reason: checking new stuff\n\n"
-                + "Description: test new comment", mergedBuild.get("comment"));
+        assertEquals(
+                "Claim reason: checking\n\n" + "Description: test comment",
+                mergedBuild.get("comment"));
+        assertEquals("Claim reason: checking new stuff\n\n"
+                + "Description: test new comment",
+                mergedBuild.get("updated_comment"));
         assertEquals(1, ((List) mergedBuild.get("culprits")).size());
         assertEquals("Laurent Doguin <ldoguin@nuxeo.com>",
                 ((List) mergedBuild.get("culprits")).get(0));
