@@ -83,16 +83,6 @@ public class JenkinsJobsFetcher implements Serializable {
         }
 
         try {
-            String jsonURL = jenkinsURL.trim();
-            if (!jsonURL.endsWith("/")) {
-                jsonURL += "/";
-            }
-            jsonURL += "api/json";
-
-            JSONObject json = retrieveJSONObject(jsonURL);
-            List<Map<String, Serializable>> jenkinsData = JenkinsJsonConverter.convertJobs(
-                    json, this);
-
             UIComponent component = event.getComponent();
             if (component == null) {
                 return;
@@ -101,8 +91,17 @@ public class JenkinsJobsFetcher implements Serializable {
                     listComponentId, UIEditableList.class);
 
             if (list != null) {
+                String jsonURL = jenkinsURL.trim();
+                if (!jsonURL.endsWith("/")) {
+                    jsonURL += "/";
+                }
+                jsonURL += "api/json";
+
+                JSONObject json = retrieveJSONObject(jsonURL);
                 EditableModel em = list.getEditableModel();
                 List<Map<String, Serializable>> oldData = (List<Map<String, Serializable>>) em.getWrappedData();
+                List<Map<String, Serializable>> jenkinsData = JenkinsJsonConverter.convertJobs(
+                        json, oldData, this);
                 em.setWrappedData(JenkinsJsonConverter.mergeData(oldData,
                         jenkinsData));
             }

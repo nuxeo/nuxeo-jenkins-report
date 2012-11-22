@@ -42,9 +42,10 @@ public class JenkinsJsonConverter {
     private static final Log log = LogFactory.getLog(JenkinsJsonConverter.class);
 
     public static List<Map<String, Serializable>> convertJobs(
-            JSONObject jsonObject, JenkinsJobsFetcher fetcher)
-            throws IOException {
+            JSONObject jsonObject, List<Map<String, Serializable>> oldData,
+            JenkinsJobsFetcher fetcher) throws IOException {
         List<Map<String, Serializable>> res = new ArrayList<Map<String, Serializable>>();
+        List<String> retrievedJobs = new ArrayList<String>();
         if (jsonObject != null) {
             JSONArray jsonJobs = jsonObject.optJSONArray("jobs");
             if (jsonJobs != null) {
@@ -53,33 +54,51 @@ public class JenkinsJsonConverter {
                     if (color != null && !color.startsWith("blue")
                             && !color.startsWith("grey")
                             && !color.startsWith("disabled")) {
-                        Map<String, Serializable> job = new HashMap<String, Serializable>();
                         String url = ((JSONObject) jsonJob).getString("url");
                         String jobId = ((JSONObject) jsonJob).getString("name");
-                        job.put("job_id", jobId);
-                        job.put("job_url", url);
-                        List<Map<String, Serializable>> subJobs = null;
-                        if (fetcher != null && url != null) {
-                            // retrieve additional info for each failing job,
-                            // fetching the whole state in one query using the
-                            // "depth" attribute is more costly
-                            JSONObject jsonBuild = fetcher.retrieveJSONObject(url.trim()
-                                    + "lastCompletedBuild/api/json");
-                            if (jsonBuild != null) {
-                                job.putAll(convertBuild(jsonBuild));
-                                subJobs = convertMultiOSDBJobs(jobId,
-                                        jsonBuild, fetcher);
-                            }
-                        }
-                        if (subJobs != null && !subJobs.isEmpty()) {
-                            // do not add the main job for multi jobs
-                            res.addAll(subJobs);
-                        } else {
-                            res.add(job);
-                        }
+                        res.addAll(retrieveJobs(jobId, url, fetcher));
+                        retrievedJobs.add(jobId);
                     }
                 }
             }
+        }
+        if (oldData != null) {
+            // retrieve status for old builds that are not part of the new
+            // results: might be because their status is ok now
+            for (Map<String, Serializable> item : oldData) {
+                String jobId = (String) item.get("job_id");
+                String url = (String) item.get("job_url");
+                if (!retrievedJobs.contains(item.get("job_id"))) {
+                    res.addAll(retrieveJobs(jobId, url, fetcher));
+                }
+            }
+        }
+        return res;
+    }
+
+    protected static List<Map<String, Serializable>> retrieveJobs(String jobId,
+            String url, JenkinsJobsFetcher fetcher) throws IOException {
+        List<Map<String, Serializable>> res = new ArrayList<Map<String, Serializable>>();
+        Map<String, Serializable> job = new HashMap<String, Serializable>();
+        job.put("job_id", jobId);
+        job.put("job_url", url);
+        List<Map<String, Serializable>> subJobs = null;
+        if (fetcher != null && url != null) {
+            // retrieve additional info for each failing job,
+            // fetching the whole state in one query using the
+            // "depth" attribute is more costly
+            JSONObject jsonBuild = fetcher.retrieveJSONObject(url.trim()
+                    + "lastCompletedBuild/api/json");
+            if (jsonBuild != null) {
+                job.putAll(convertBuild(jsonBuild));
+                subJobs = convertMultiOSDBJobs(jobId, jsonBuild, fetcher);
+            }
+        }
+        if (subJobs != null && !subJobs.isEmpty()) {
+            // do not add the main job for multi jobs
+            res.addAll(subJobs);
+        } else {
+            res.add(job);
         }
         return res;
     }
@@ -219,24 +238,9 @@ public class JenkinsJsonConverter {
                     } else {
                         oldItem.put("updated_build_number", build_number);
                         oldItem.put("updated_type", item.get("type"));
-                        // override claimer and comments
+                        oldItem.put("updated_comment", item.get("comment"));
+                        // only override claimer
                         oldItem.put("claimer", item.get("claimer"));
-                        // merge comment
-                        String oldComment = String.valueOf(oldItem.get("comment"));
-                        String newComent = String.valueOf(item.get("comment"));
-                        if (oldComment != null) {
-                            if (newComent != null
-                                    && !newComent.equals(oldComment)) {
-                                String mergedComment = String.format(
-                                        "Comments for build %s:\n%s\n\nComments for build %s:\n%s",
-                                        oldBuildNumber, oldComment,
-                                        build_number, newComent);
-                                oldItem.put("comment", mergedComment);
-                            }
-                        } else if (newComent != null) {
-                            oldItem.put("comment", newComent);
-                        }
-                        oldItem.put("cause", item.get("code"));
                         res.put(id, oldItem);
                     }
                 } else {
