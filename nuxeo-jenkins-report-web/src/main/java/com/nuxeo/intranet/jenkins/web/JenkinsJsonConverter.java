@@ -244,6 +244,9 @@ public class JenkinsJsonConverter {
                         res.put(id, oldItem);
                     }
                 } else {
+                    if (oldData != null && !oldData.isEmpty()) {
+                        item.put("newly_failing", "true");
+                    }
                     res.put(id, item);
                 }
             }
