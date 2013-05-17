@@ -49,8 +49,8 @@ public class TestJenkinsJsonConverter {
     public void testJobsConverter() throws Exception {
         JSONObject json = getJsonBuild("jobs.json");
         // use a null fetcher: each job info will not be retrieved
-        List<Map<String, Serializable>> res = JenkinsJsonConverter.convertJobs(
-                json, null, null);
+        JenkinsJsonConverter cv = new JenkinsJsonConverter();
+        List<Map<String, Serializable>> res = cv.convertJobs(json, null, null);
         assertEquals(57, res.size());
 
         Map<String, Serializable> failing = res.get(0);
@@ -67,7 +67,8 @@ public class TestJenkinsJsonConverter {
         JSONObject json = getJsonBuild("build.json");
 
         // use a null fetcher: each job info will not be retrieved
-        Map<String, Serializable> build = JenkinsJsonConverter.convertBuild(json);
+        JenkinsJsonConverter cv = new JenkinsJsonConverter();
+        Map<String, Serializable> build = cv.convertBuild(json);
         assertNotNull(build);
         assertEquals("702", build.get("build_number"));
         assertEquals("UNSTABLE", build.get("type"));
@@ -80,28 +81,35 @@ public class TestJenkinsJsonConverter {
                 ((List) build.get("culprits")).get(0));
     }
 
-    protected List<Map<String, Serializable>> mergeData(
+    protected JenkinsJsonConverter mergeData(
             Map<String, Serializable> oldBuild,
             Map<String, Serializable> newBuild) {
+        JenkinsJsonConverter cv = new JenkinsJsonConverter();
         List<Map<String, Serializable>> oldData = new ArrayList<Map<String, Serializable>>();
         oldData.add(oldBuild);
         List<Map<String, Serializable>> newData = new ArrayList<Map<String, Serializable>>();
         newData.add(newBuild);
-        return JenkinsJsonConverter.mergeData(oldData, newData);
+        cv.mergeData(oldData, newData);
+        return cv;
     }
 
     @Test
     @SuppressWarnings("rawtypes")
     public void testMergeBuildConverterNoChange() throws Exception {
         JSONObject json = getJsonBuild("build.json");
-        Map<String, Serializable> build = JenkinsJsonConverter.convertBuild(json);
-        Map<String, Serializable> newBuild = JenkinsJsonConverter.convertBuild(json);
+        JenkinsJsonConverter cv = new JenkinsJsonConverter();
+        Map<String, Serializable> build = cv.convertBuild(json);
+        Map<String, Serializable> newBuild = cv.convertBuild(json);
 
         // merge with same data and check nothing has changed
-        List<Map<String, Serializable>> res = mergeData(build, newBuild);
+        cv = mergeData(build, newBuild);
+        List<Map<String, Serializable>> res = cv.getMergedData();
 
         assertNotNull(res);
         assertEquals(1, res.size());
+        assertEquals(0, cv.getNewFailingCount());
+        assertEquals(0, cv.getFixedCount());
+        assertEquals(1, cv.getUnchangedCount());
 
         Map<String, Serializable> mergedBuild = res.get(0);
         assertNotNull(mergedBuild);
@@ -120,16 +128,21 @@ public class TestJenkinsJsonConverter {
     @Test
     @SuppressWarnings("rawtypes")
     public void testMergeBuildConverterBuildChange() throws Exception {
+        JenkinsJsonConverter cv = new JenkinsJsonConverter();
         JSONObject json = getJsonBuild("build.json");
-        Map<String, Serializable> build = JenkinsJsonConverter.convertBuild(json);
+        Map<String, Serializable> build = cv.convertBuild(json);
         json = getJsonBuild("modified_build.json");
-        Map<String, Serializable> newBuild = JenkinsJsonConverter.convertBuild(json);
+        Map<String, Serializable> newBuild = cv.convertBuild(json);
 
         // merge with same data and check nothing has changed
-        List<Map<String, Serializable>> res = mergeData(build, newBuild);
+        cv = mergeData(build, newBuild);
+        List<Map<String, Serializable>> res = cv.getMergedData();
 
         assertNotNull(res);
         assertEquals(1, res.size());
+        assertEquals(0, cv.getNewFailingCount());
+        assertEquals(0, cv.getFixedCount());
+        assertEquals(1, cv.getUnchangedCount());
 
         Map<String, Serializable> mergedBuild = res.get(0);
         assertNotNull(mergedBuild);
@@ -148,16 +161,21 @@ public class TestJenkinsJsonConverter {
     @Test
     @SuppressWarnings("rawtypes")
     public void testMergeBuildConverterBuildNewer() throws Exception {
+        JenkinsJsonConverter cv = new JenkinsJsonConverter();
         JSONObject json = getJsonBuild("build.json");
-        Map<String, Serializable> build = JenkinsJsonConverter.convertBuild(json);
+        Map<String, Serializable> build = cv.convertBuild(json);
         json = getJsonBuild("new_build.json");
-        Map<String, Serializable> newBuild = JenkinsJsonConverter.convertBuild(json);
+        Map<String, Serializable> newBuild = cv.convertBuild(json);
 
         // merge with changed data with new build, and check changes
-        List<Map<String, Serializable>> res = mergeData(build, newBuild);
+        cv = mergeData(build, newBuild);
+        List<Map<String, Serializable>> res = cv.getMergedData();
 
         assertNotNull(res);
         assertEquals(1, res.size());
+        assertEquals(0, cv.getNewFailingCount());
+        assertEquals(0, cv.getFixedCount());
+        assertEquals(1, cv.getUnchangedCount());
 
         Map<String, Serializable> mergedBuild = res.get(0);
         assertNotNull(mergedBuild);
@@ -182,7 +200,8 @@ public class TestJenkinsJsonConverter {
         JSONObject json = JSONObject.fromObject(FileUtils.read(stream));
 
         // use a null fetcher: each job info will not be retrieved
-        List<Map<String, Serializable>> builds = JenkinsJsonConverter.convertMultiOSDBJobs(
+        JenkinsJsonConverter cv = new JenkinsJsonConverter();
+        List<Map<String, Serializable>> builds = cv.convertMultiOSDBJobs(
                 "FT-nuxeo-5.6.0-selenium-dm-tomcat", json, null);
         assertNotNull(builds);
         assertEquals(10, builds.size());

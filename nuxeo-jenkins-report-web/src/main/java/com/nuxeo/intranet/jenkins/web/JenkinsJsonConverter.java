@@ -41,9 +41,19 @@ public class JenkinsJsonConverter {
 
     private static final Log log = LogFactory.getLog(JenkinsJsonConverter.class);
 
-    public static List<Map<String, Serializable>> convertJobs(
-            JSONObject jsonObject, List<Map<String, Serializable>> oldData,
-            JenkinsJobsFetcher fetcher) throws IOException {
+    protected int newFailingCount = 0;
+
+    protected int fixedCount = 0;
+
+    protected int stillUnstable = 0;
+
+    protected int unchangedCount = 0;
+
+    List<Map<String, Serializable>> mergedData = null;
+
+    public List<Map<String, Serializable>> convertJobs(JSONObject jsonObject,
+            List<Map<String, Serializable>> oldData, JenkinsJobsFetcher fetcher)
+            throws IOException {
         List<Map<String, Serializable>> res = new ArrayList<Map<String, Serializable>>();
         List<String> retrievedJobs = new ArrayList<String>();
         if (jsonObject != null) {
@@ -76,7 +86,7 @@ public class JenkinsJsonConverter {
         return res;
     }
 
-    protected static List<Map<String, Serializable>> retrieveJobs(String jobId,
+    protected List<Map<String, Serializable>> retrieveJobs(String jobId,
             String url, JenkinsJobsFetcher fetcher) throws IOException {
         List<Map<String, Serializable>> res = new ArrayList<Map<String, Serializable>>();
         Map<String, Serializable> job = new HashMap<String, Serializable>();
@@ -103,7 +113,7 @@ public class JenkinsJsonConverter {
         return res;
     }
 
-    public static List<Map<String, Serializable>> convertMultiOSDBJobs(
+    public List<Map<String, Serializable>> convertMultiOSDBJobs(
             String parentBuildId, JSONObject jsonParentBuild,
             JenkinsJobsFetcher fetcher) throws IOException {
         List<Map<String, Serializable>> res = new ArrayList<Map<String, Serializable>>();
@@ -157,7 +167,7 @@ public class JenkinsJsonConverter {
         return res;
     }
 
-    public static Map<String, Serializable> convertBuild(JSONObject jsonBuild)
+    public Map<String, Serializable> convertBuild(JSONObject jsonBuild)
             throws IOException {
         Map<String, Serializable> build = new HashMap<String, Serializable>();
         // get build number
@@ -210,9 +220,15 @@ public class JenkinsJsonConverter {
         return build;
     }
 
-    public static List<Map<String, Serializable>> mergeData(
+    public List<Map<String, Serializable>> mergeData(
             List<Map<String, Serializable>> oldData,
             List<Map<String, Serializable>> newData) {
+        // reset counters and merged data
+        newFailingCount = 0;
+        fixedCount = 0;
+        unchangedCount = 0;
+        mergedData = null;
+
         // gather up all old info, and use a map for easier reference
         HashMap<String, Map<String, Serializable>> res = new LinkedHashMap<String, Map<String, Serializable>>();
         if (oldData != null) {
@@ -220,6 +236,7 @@ public class JenkinsJsonConverter {
                 res.put((String) item.get("job_id"), item);
             }
         }
+
         // add up new values and merge if already in the existing list
         if (newData != null) {
             for (Map<String, Serializable> item : newData) {
@@ -234,28 +251,54 @@ public class JenkinsJsonConverter {
                         // override claimer and comments
                         oldItem.put("claimer", item.get("claimer"));
                         oldItem.put("comment", item.get("comment"));
-                        res.put(id, oldItem);
+                        unchangedCount++;
                     } else {
                         oldItem.put("updated_build_number", build_number);
-                        oldItem.put("updated_type", item.get("type"));
+                        String oldType = (String) oldItem.get("updated_type");
+                        String newType = (String) item.get("type");
+                        oldItem.put("updated_type", newType);
                         oldItem.put("updated_comment", item.get("comment"));
                         // only override claimer
                         oldItem.put("claimer", item.get("claimer"));
-                        res.put(id, oldItem);
+                        if ("SUCCESS".equals(newType)
+                                && !"SUCCESS".equals(oldType)) {
+                            fixedCount++;
+                        }
                     }
+                    res.put(id, oldItem);
                 } else {
                     if (oldData != null && !oldData.isEmpty()) {
                         item.put("newly_failing", "true");
                     }
+                    newFailingCount++;
                     res.put(id, item);
                 }
             }
         }
 
-        return new ArrayList<Map<String, Serializable>>(res.values());
+        unchangedCount = res.size() - (fixedCount + newFailingCount);
+
+        mergedData = new ArrayList<Map<String, Serializable>>(res.values());
+        return mergedData;
     }
 
-    protected static boolean isEmpty(String value) {
+    public int getNewFailingCount() {
+        return newFailingCount;
+    }
+
+    public int getFixedCount() {
+        return fixedCount;
+    }
+
+    public int getUnchangedCount() {
+        return unchangedCount;
+    }
+
+    public List<Map<String, Serializable>> getMergedData() {
+        return mergedData;
+    }
+
+    protected boolean isEmpty(String value) {
         return StringUtils.isBlank(value) || "null".equals(value);
     }
 

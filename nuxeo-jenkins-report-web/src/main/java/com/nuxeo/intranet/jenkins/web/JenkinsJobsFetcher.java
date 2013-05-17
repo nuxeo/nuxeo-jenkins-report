@@ -20,9 +20,13 @@ import static org.jboss.seam.ScopeType.EVENT;
 
 import java.io.Serializable;
 import java.net.URL;
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.component.EditableValueHolder;
 import javax.faces.component.UIComponent;
 import javax.faces.event.ActionEvent;
 
@@ -37,10 +41,13 @@ import org.jboss.seam.annotations.web.RequestParameter;
 import org.jboss.seam.faces.FacesMessages;
 import org.jboss.seam.international.StatusMessage;
 import org.nuxeo.ecm.core.api.Blob;
+import org.nuxeo.ecm.core.api.DocumentModel;
 import org.nuxeo.ecm.core.api.impl.blob.URLBlob;
+import org.nuxeo.ecm.platform.ui.web.api.NavigationContext;
 import org.nuxeo.ecm.platform.ui.web.component.list.UIEditableList;
 import org.nuxeo.ecm.platform.ui.web.model.EditableModel;
 import org.nuxeo.ecm.platform.ui.web.util.ComponentUtils;
+import org.nuxeo.ecm.webapp.contentbrowser.DocumentActions;
 
 /**
  * Fetches unstable jobs information from Jenkins json API and fill a list JSF
@@ -63,21 +70,28 @@ public class JenkinsJobsFetcher implements Serializable {
     protected String listComponentId;
 
     @RequestParameter
+    protected String lastUpdateFeedbackComponentId;
+
+    @RequestParameter
     protected String feedbackComponentId;
+
+    @RequestParameter
+    protected Boolean removeSuccessful;
 
     @In(create = true, required = false)
     protected FacesMessages facesMessages;
 
-    protected void logMessage(StatusMessage.Severity severity, String message) {
-        facesMessages.addToControl(feedbackComponentId, severity, message);
-    }
+    @In(create = true, required = false)
+    protected DocumentActions documentActions;
+
+    @In(create = true)
+    protected NavigationContext navigationContext;
 
     @SuppressWarnings("unchecked")
     public void fetchJobsToList(ActionEvent event) {
         // retrieve new values from URL first
         if (jenkinsURL == null) {
-            facesMessages.addToControl(feedbackComponentId,
-                    StatusMessage.Severity.ERROR,
+            logMessage(StatusMessage.Severity.ERROR,
                     "No URL sent to check Jenkins jobs");
             return;
         }
@@ -89,6 +103,9 @@ public class JenkinsJobsFetcher implements Serializable {
             }
             UIEditableList list = ComponentUtils.getComponent(component,
                     listComponentId, UIEditableList.class);
+            EditableValueHolder comment = ComponentUtils.getComponent(
+                    component, lastUpdateFeedbackComponentId,
+                    EditableValueHolder.class);
 
             if (list != null) {
                 String jsonURL = jenkinsURL.trim();
@@ -100,24 +117,81 @@ public class JenkinsJobsFetcher implements Serializable {
                 JSONObject json = retrieveJSONObject(jsonURL);
                 EditableModel em = list.getEditableModel();
                 List<Map<String, Serializable>> oldData = (List<Map<String, Serializable>>) em.getWrappedData();
-                List<Map<String, Serializable>> jenkinsData = JenkinsJsonConverter.convertJobs(
+                JenkinsJsonConverter cv = new JenkinsJsonConverter();
+                List<Map<String, Serializable>> jenkinsData = cv.convertJobs(
                         json, oldData, this);
-                em.setWrappedData(JenkinsJsonConverter.mergeData(oldData,
-                        jenkinsData));
+                List<Map<String, Serializable>> mergedData = cv.mergeData(
+                        oldData, jenkinsData);
+                em.setWrappedData(mergedData);
+
+                logMessage(StatusMessage.Severity.INFO,
+                        "Jobs retrieved from Jenkins, enjoy!");
+                String updateMessage = computeLastUpdateFeedbackMessage(cv);
+                if (comment != null) {
+                    comment.setSubmittedValue(updateMessage);
+                }
             }
 
-            facesMessages.addToControl(feedbackComponentId,
-                    StatusMessage.Severity.INFO,
-                    "Jobs retrieved from Jenkins, enjoy!");
         } catch (Exception e) {
             log.error(e, e);
-            facesMessages.addToControl(feedbackComponentId,
-                    StatusMessage.Severity.ERROR, String.format(
-                            "Error while retrieving jobs from Jenkins: %s",
-                            e.getMessage()));
+            logMessage(StatusMessage.Severity.ERROR, String.format(
+                    "Error while retrieving jobs from Jenkins: %s",
+                    e.getMessage()));
         }
     }
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+    public void updateFromJenkins(ActionEvent event) {
+        // retrieve new values from URL first
+        if (jenkinsURL == null) {
+            logMessage(StatusMessage.Severity.ERROR,
+                    "No URL sent to check Jenkins jobs");
+            return;
+        }
+
+        try {
+            String jsonURL = jenkinsURL.trim();
+            if (!jsonURL.endsWith("/")) {
+                jsonURL += "/";
+            }
+            jsonURL += "api/json";
+
+            JSONObject json = retrieveJSONObject(jsonURL);
+            DocumentModel currentDoc = navigationContext.getCurrentDocument();
+            List<Map<String, Serializable>> oldData = (List) currentDoc.getPropertyValue(JenkinsReportFields.JOBS_PROPERTY);
+            JenkinsJsonConverter cv = new JenkinsJsonConverter();
+            List<Map<String, Serializable>> jenkinsData = cv.convertJobs(json,
+                    oldData, this);
+            List<Map<String, Serializable>> mergedData = cv.mergeData(oldData,
+                    jenkinsData);
+            currentDoc.setPropertyValue(JenkinsReportFields.JOBS_PROPERTY,
+                    (Serializable) mergedData);
+            logMessage(StatusMessage.Severity.INFO,
+                    "Jobs retrieved from Jenkins, enjoy!");
+            String updateMessage = computeLastUpdateFeedbackMessage(cv);
+            currentDoc.setPropertyValue(
+                    JenkinsReportFields.LAST_UPDATE_FEEDBACK_PROPERTY,
+                    updateMessage);
+            documentActions.updateDocument(currentDoc, Boolean.TRUE);
+
+        } catch (Exception e) {
+            log.error(e, e);
+            logMessage(StatusMessage.Severity.ERROR, String.format(
+                    "Error while retrieving jobs from Jenkins: %s",
+                    e.getMessage()));
+        }
+    }
+
+    /**
+     * methods used by the {@link JenkinsJsonConverter} class
+     */
+
+    /**
+     * Retrieve the json data for given url
+     *
+     * @since 5.6
+     * @return
+     */
     protected JSONObject retrieveJSONObject(String url) {
         if (url == null) {
             return null;
@@ -141,4 +215,38 @@ public class JenkinsJobsFetcher implements Serializable {
         }
     }
 
+    protected void logMessage(StatusMessage.Severity severity, String message) {
+        facesMessages.addToControl(feedbackComponentId, severity, message);
+    }
+
+    @SuppressWarnings("boxing")
+    protected String computeLastUpdateFeedbackMessage(
+            JenkinsJsonConverter converter) {
+        StringBuilder res = new StringBuilder();
+        res.append("Last Update done at ");
+        DateFormat aDateFormat = DateFormat.getDateTimeInstance();
+        res.append(aDateFormat.format((new Date())));
+        res.append('\n');
+        // copy error messages that could have been notified to JSF
+        List<FacesMessage> messages = facesMessages.getCurrentMessagesForControl(feedbackComponentId);
+        if (messages != null) {
+            for (FacesMessage msg : messages) {
+                if (msg.getSeverity().getOrdinal() > 0) {
+                    res.append(msg.getSummary());
+                    res.append('\n');
+                } else {
+                    res.append("to remove: " + msg.getSummary());
+                    res.append('\n');
+                }
+            }
+        }
+        // add final message
+        if (converter != null) {
+            res.append(String.format(
+                    "Jobs retrieved from Jenkins: %s new failures, %s fixed, %s unchanged.",
+                    converter.getNewFailingCount(), converter.getFixedCount(),
+                    converter.getUnchangedCount()));
+        }
+        return res.toString();
+    }
 }
