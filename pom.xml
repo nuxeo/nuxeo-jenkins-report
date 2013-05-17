@@ -12,11 +12,11 @@
   <artifactId>parent</artifactId>
   <packaging>pom</packaging>
   <name>Nuxeo Jenkins Report</name>
-  <version>3.1-SNAPSHOT</version>
+  <version>3.0.1</version>
 
   <properties>
-    <nuxeo.jenkins.version>3.1-SNAPSHOT</nuxeo.jenkins.version>
-    <nuxeo.jenkins.studio.version>0.0.0-SNAPSHOT</nuxeo.jenkins.studio.version>
+    <nuxeo.jenkins.version>3.0.1</nuxeo.jenkins.version>
+    <nuxeo.jenkins.studio.version>3.0.1</nuxeo.jenkins.studio.version>
   </properties>
 
   <modules>
@@ -65,7 +65,7 @@
           <artifactId>maven-enforcer-plugin</artifactId>
           <configuration>
             <!-- switch to true to build against a SNAPSHOT -->
-            <skip>false</skip>
+            <skip>true</skip>
           </configuration>
         </plugin>
       </plugins>
