@@ -1,312 +1,148 @@
 {
   "actions" : [
     {
-      "parameterDefinitions" : [
+      "parameters" : [
         {
-          "defaultParameterValue" : {
-            "value" : "5.6.0"
-          },
-          "description" : "",
           "name" : "BRANCH",
-          "type" : "StringParameterDefinition"
+          "value" : "5.6.0"
         }
       ]
     },
     {
-      
-    },
-    {
-      
-    },
-    {
-      
-    },
-    {
-      
-    },
-    {
-      
-    },
-    {
-      
-    },
-    {
-      
-    },
-    {
-      
-    }
-  ],
-  "description" : "Run selenium tests on multiple OS and databases.\r\nNote: database parameters are defined in each slave configuration.<br/>\r\nH2+Linux is skipped since already tested by\r\n<a href=\"https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat\">FT-nuxeo-5.6.0-selenium-dm-tomcat</a>\r\n",
-  "displayName" : "FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb",
-  "displayNameOrNull" : null,
-  "name" : "FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb",
-  "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/",
-  "buildable" : true,
-  "builds" : [
-    {
-      "number" : 439,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/439/"
-    },
-    {
-      "number" : 438,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/438/"
-    },
-    {
-      "number" : 437,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/437/"
-    },
-    {
-      "number" : 436,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/436/"
-    },
-    {
-      "number" : 435,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/435/"
-    },
-    {
-      "number" : 434,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/434/"
-    },
-    {
-      "number" : 433,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/433/"
-    },
-    {
-      "number" : 432,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/432/"
-    },
-    {
-      "number" : 431,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/431/"
-    },
-    {
-      "number" : 430,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/430/"
-    },
-    {
-      "number" : 429,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/429/"
-    },
-    {
-      "number" : 428,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/428/"
-    },
-    {
-      "number" : 427,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/427/"
-    },
-    {
-      "number" : 426,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/426/"
-    },
-    {
-      "number" : 425,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/425/"
-    },
-    {
-      "number" : 424,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/424/"
-    },
-    {
-      "number" : 423,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/423/"
-    },
-    {
-      "number" : 422,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/422/"
-    },
-    {
-      "number" : 421,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/421/"
-    },
-    {
-      "number" : 420,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/420/"
-    },
-    {
-      "number" : 419,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/419/"
-    },
-    {
-      "number" : 418,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/418/"
-    },
-    {
-      "number" : 417,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/417/"
-    },
-    {
-      "number" : 416,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/416/"
-    },
-    {
-      "number" : 415,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/415/"
-    },
-    {
-      "number" : 414,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/414/"
-    },
-    {
-      "number" : 413,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/413/"
-    },
-    {
-      "number" : 412,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/412/"
-    },
-    {
-      "number" : 411,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/411/"
-    },
-    {
-      "number" : 410,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/410/"
-    },
-    {
-      "number" : 409,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/409/"
-    },
-    {
-      "number" : 408,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/408/"
-    },
-    {
-      "number" : 407,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/407/"
-    },
-    {
-      "number" : 406,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/406/"
-    },
-    {
-      "number" : 405,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/405/"
-    },
-    {
-      "number" : 404,
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/404/"
-    }
-  ],
-  "color" : "red",
-  "firstBuild" : {
-    "number" : 404,
-    "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/404/"
-  },
-  "healthReport" : [
-    {
-      "description" : "Build stability: 3 out of the last 5 builds failed.",
-      "iconUrl" : "health-20to39.png",
-      "score" : 40
-    }
-  ],
-  "inQueue" : false,
-  "keepDependencies" : false,
-  "lastBuild" : {
-    "number" : 439,
-    "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/439/"
-  },
-  "lastCompletedBuild" : {
-    "number" : 439,
-    "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/439/"
-  },
-  "lastFailedBuild" : {
-    "number" : 439,
-    "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/439/"
-  },
-  "lastStableBuild" : {
-    "number" : 438,
-    "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/438/"
-  },
-  "lastSuccessfulBuild" : {
-    "number" : 438,
-    "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/438/"
-  },
-  "lastUnstableBuild" : null,
-  "lastUnsuccessfulBuild" : {
-    "number" : 439,
-    "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/439/"
-  },
-  "nextBuildNumber" : 440,
-  "property" : [
-    {
-      
-    },
-    {
-      "parameterDefinitions" : [
+      "causes" : [
         {
-          "defaultParameterValue" : {
-            "name" : "BRANCH",
-            "value" : "5.6.0"
-          },
-          "description" : "",
-          "name" : "BRANCH",
-          "type" : "StringParameterDefinition"
+          "shortDescription" : "Started by upstream project \"FT-nuxeo-5.6.0-selenium-dm-tomcat\" build number 142",
+          "upstreamBuild" : 142,
+          "upstreamProject" : "FT-nuxeo-5.6.0-selenium-dm-tomcat",
+          "upstreamUrl" : "job/FT-nuxeo-5.6.0-selenium-dm-tomcat/"
         }
       ]
+    },
+    {
+      "buildsByBranchName" : {
+        "origin/5.6.0" : {
+          "buildNumber" : 124,
+          "buildResult" : null,
+          "revision" : {
+            "SHA1" : "8960cd191d1de2b3a5a96bca1470cf48789b7043",
+            "branch" : [
+              {
+                "SHA1" : "8960cd191d1de2b3a5a96bca1470cf48789b7043",
+                "name" : "origin/5.6.0"
+              }
+            ]
+          }
+        }
+      },
+      "lastBuiltRevision" : {
+        "SHA1" : "8960cd191d1de2b3a5a96bca1470cf48789b7043",
+        "branch" : [
+          {
+            "SHA1" : "8960cd191d1de2b3a5a96bca1470cf48789b7043",
+            "name" : "origin/5.6.0"
+          }
+        ]
+      },
+      "remoteUrls" : [
+        "git://github.com/nuxeo/nuxeo-distribution.git"
+      ],
+      "scmName" : ""
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
     }
   ],
-  "queueItem" : null,
-  "concurrentBuild" : false,
-  "downstreamProjects" : [
+  "artifacts" : [
     
   ],
-  "scm" : {
-    
+  "building" : false,
+  "description" : null,
+  "duration" : 4366712,
+  "estimatedDuration" : 4108284,
+  "executor" : null,
+  "fullDisplayName" : "FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb #124",
+  "id" : "2012-10-02_20-48-12",
+  "keepLog" : false,
+  "number" : 124,
+  "result" : "FAILURE",
+  "timestamp" : 1349203692036,
+  "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/124/",
+  "builtOn" : "",
+  "changeSet" : {
+    "items" : [
+      
+    ],
+    "kind" : null
   },
-  "upstreamProjects" : [
+  "culprits" : [
     {
-      "name" : "FT-nuxeo-5.6.0-selenium-dm-tomcat",
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat/",
-      "color" : "red"
+      "absoluteUrl" : "https://qa.nuxeo.org/jenkins/user/Julien%20Carsique",
+      "fullName" : "Julien Carsique"
+    },
+    {
+      "absoluteUrl" : "https://qa.nuxeo.org/jenkins/user/at",
+      "fullName" : "at"
+    },
+    {
+      "absoluteUrl" : "https://qa.nuxeo.org/jenkins/user/jenkins",
+      "fullName" : "jenkins"
     }
   ],
-  "activeConfigurations" : [
+  "runs" : [
     {
-      "name" : "Slave=MULTIDB_WINDOWS,dbprofile=default",
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/Slave=MULTIDB_WINDOWS,dbprofile=default/",
-      "color" : "red"
+      "number" : 124,
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/./Slave=MULTIDB_LINUX,dbprofile=default/124/"
     },
     {
-      "name" : "Slave=MULTIDB_LINUX,dbprofile=mssql",
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/Slave=MULTIDB_LINUX,dbprofile=mssql/",
-      "color" : "blue"
+      "number" : 124,
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/./Slave=MULTIDB_LINUX,dbprofile=mssql/124/"
     },
     {
-      "name" : "Slave=MULTIDB_WINDOWS,dbprofile=mssql",
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/Slave=MULTIDB_WINDOWS,dbprofile=mssql/",
-      "color" : "blue"
+      "number" : 124,
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/./Slave=MULTIDB_LINUX,dbprofile=mysql/124/"
     },
     {
-      "name" : "Slave=MULTIDB_LINUX,dbprofile=oracle11g",
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/Slave=MULTIDB_LINUX,dbprofile=oracle11g/",
-      "color" : "blue"
+      "number" : 124,
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/./Slave=MULTIDB_LINUX,dbprofile=oracle11g/124/"
     },
     {
-      "name" : "Slave=MULTIDB_WINDOWS,dbprofile=oracle11g",
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/Slave=MULTIDB_WINDOWS,dbprofile=oracle11g/",
-      "color" : "blue"
+      "number" : 124,
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/./Slave=MULTIDB_LINUX,dbprofile=pgsql/124/"
     },
     {
-      "name" : "Slave=MULTIDB_LINUX,dbprofile=mysql",
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/Slave=MULTIDB_LINUX,dbprofile=mysql/",
-      "color" : "blue"
+      "number" : 124,
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/./Slave=MULTIDB_WINDOWS,dbprofile=default/124/"
     },
     {
-      "name" : "Slave=MULTIDB_WINDOWS,dbprofile=mysql",
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/Slave=MULTIDB_WINDOWS,dbprofile=mysql/",
-      "color" : "blue"
+      "number" : 124,
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/./Slave=MULTIDB_WINDOWS,dbprofile=mssql/124/"
     },
     {
-      "name" : "Slave=MULTIDB_LINUX,dbprofile=pgsql",
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/Slave=MULTIDB_LINUX,dbprofile=pgsql/",
-      "color" : "blue"
+      "number" : 124,
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/./Slave=MULTIDB_WINDOWS,dbprofile=mysql/124/"
     },
     {
-      "name" : "Slave=MULTIDB_WINDOWS,dbprofile=pgsql",
-      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/Slave=MULTIDB_WINDOWS,dbprofile=pgsql/",
-      "color" : "red"
+      "number" : 124,
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/./Slave=MULTIDB_WINDOWS,dbprofile=oracle11g/124/"
+    },
+    {
+      "number" : 124,
+      "url" : "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/./Slave=MULTIDB_WINDOWS,dbprofile=pgsql/124/"
     }
   ]
 }

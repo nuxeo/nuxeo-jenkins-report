@@ -39,7 +39,6 @@ import org.apache.commons.logging.LogFactory;
  */
 public class JenkinsJsonConverter {
 
-    @SuppressWarnings("unused")
     private static final Log log = LogFactory.getLog(JenkinsJsonConverter.class);
 
     protected int newFailingCount = 0;
@@ -62,7 +61,9 @@ public class JenkinsJsonConverter {
             if (jsonJobs != null) {
                 for (Object jsonJob : jsonJobs) {
                     String color = ((JSONObject) jsonJob).getString("color");
-                    if (acceptColor(color)) {
+                    if (color != null && !color.startsWith("blue")
+                            && !color.startsWith("grey")
+                            && !color.startsWith("disabled")) {
                         String url = ((JSONObject) jsonJob).getString("url");
                         String jobId = ((JSONObject) jsonJob).getString("name");
                         res.addAll(retrieveJobs(jobId, url, fetcher));
@@ -83,14 +84,6 @@ public class JenkinsJsonConverter {
             }
         }
         return res;
-    }
-
-    protected boolean acceptColor(String color) {
-        if (color != null && !color.startsWith("blue")
-                && !color.startsWith("grey") && !color.startsWith("disabled")) {
-            return true;
-        }
-        return false;
     }
 
     protected List<Map<String, Serializable>> retrieveJobs(String jobId,
@@ -124,21 +117,32 @@ public class JenkinsJsonConverter {
             String parentBuildId, JSONObject jsonParentBuild,
             JenkinsJobsFetcher fetcher) throws IOException {
         List<Map<String, Serializable>> res = new ArrayList<Map<String, Serializable>>();
-        if (jsonParentBuild.containsKey("activeConfigurations")) {
+        if (jsonParentBuild.containsKey("runs")) {
             // multiosdb job => retrieve info from subjobs
-            JSONArray runs = jsonParentBuild.optJSONArray("activeConfigurations");
+            JSONArray runs = jsonParentBuild.optJSONArray("runs");
             if (runs != null) {
                 for (Object jsonRun : runs) {
-                    if (jsonRun != null && ((JSONObject) jsonRun).has("color")) {
-                        String color = ((JSONObject) jsonRun).getString("color");
-                        if (acceptColor(color)) {
-                            String runUrl = ((JSONObject) jsonRun).optString("url");
-                            String runJobId = ((JSONObject) jsonRun).optString("name");
-                            if (runUrl != null) {
-                                Map<String, Serializable> runJob = new HashMap<String, Serializable>();
+                    if (jsonRun != null && ((JSONObject) jsonRun).has("url")) {
+                        String runUrl = ((JSONObject) jsonRun).getString("url");
+                        if (runUrl != null) {
+                            Map<String, Serializable> runJob = new HashMap<String, Serializable>();
+                            if (runUrl.contains("./")) {
+                                // parse it and make it
+                                // the id
+                                String runJobId = runUrl.substring(runUrl.indexOf("./") + 2);
+                                runJobId = runJobId.substring(0,
+                                        runJobId.indexOf("/"));
                                 runJob.put("job_id", parentBuildId + "#"
                                         + runJobId);
-                                runJob.put("job_url", runUrl);
+                                // remove build number from job URL
+                                String subUrl = runUrl;
+                                if (subUrl.endsWith("/")) {
+                                    subUrl = subUrl.substring(0,
+                                            subUrl.length() - 1);
+                                }
+                                subUrl = subUrl.substring(0,
+                                        subUrl.lastIndexOf("/") + 1);
+                                runJob.put("job_url", subUrl);
                                 if (fetcher != null) {
                                     JSONObject jsonRunBuild = fetcher.retrieveJSONObject(runUrl
                                             + "api/json");
@@ -146,7 +150,14 @@ public class JenkinsJsonConverter {
                                         runJob.putAll(convertBuild(jsonRunBuild));
                                     }
                                 }
-                                res.add(runJob);
+                                String failureType = (String) runJob.get("type");
+                                if (!"SUCCESS".equals(failureType)) {
+                                    // ignore sub jobs that are ok
+                                    res.add(runJob);
+                                }
+                            } else {
+                                // ignore for now...
+                                log.warn("Ignoring failing job at " + runUrl);
                             }
                         }
                     }
