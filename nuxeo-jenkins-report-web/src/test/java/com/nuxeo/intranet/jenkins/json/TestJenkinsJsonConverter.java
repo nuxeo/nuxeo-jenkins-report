@@ -204,13 +204,18 @@ public class TestJenkinsJsonConverter {
         List<Map<String, Serializable>> builds = cv.convertMultiOSDBJobs(
                 "FT-nuxeo-5.6.0-selenium-dm-tomcat", json, null);
         assertNotNull(builds);
-        assertEquals(10, builds.size());
+        assertEquals(2, builds.size());
         assertEquals(
-                "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/./Slave=MULTIDB_LINUX,dbprofile=default/",
+                "FT-nuxeo-5.6.0-selenium-dm-tomcat#Slave=MULTIDB_WINDOWS,dbprofile=default",
+                builds.get(0).get("job_id"));
+        assertEquals(
+                "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/Slave=MULTIDB_WINDOWS,dbprofile=default/",
                 builds.get(0).get("job_url"));
         assertEquals(
-                "FT-nuxeo-5.6.0-selenium-dm-tomcat#Slave=MULTIDB_LINUX,dbprofile=default",
-                builds.get(0).get("job_id"));
+                "FT-nuxeo-5.6.0-selenium-dm-tomcat#Slave=MULTIDB_WINDOWS,dbprofile=pgsql",
+                builds.get(1).get("job_id"));
+        assertEquals(
+                "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/Slave=MULTIDB_WINDOWS,dbprofile=pgsql/",
+                builds.get(1).get("job_url"));
     }
-
 }
