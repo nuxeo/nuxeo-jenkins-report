@@ -120,28 +120,23 @@ public class JenkinsJsonConverter {
         if (jsonParentBuild.containsKey("runs")) {
             // multiosdb job => retrieve info from subjobs
             JSONArray runs = jsonParentBuild.optJSONArray("runs");
+            String parentBuildUrl = jsonParentBuild.getString("url");
+            String parentUrl = removeBuildNumber(parentBuildUrl);
             if (runs != null) {
                 for (Object jsonRun : runs) {
                     if (jsonRun != null && ((JSONObject) jsonRun).has("url")) {
                         String runUrl = ((JSONObject) jsonRun).getString("url");
                         if (runUrl != null) {
                             Map<String, Serializable> runJob = new HashMap<String, Serializable>();
-                            if (runUrl.contains("./")) {
-                                // parse it and make it
-                                // the id
-                                String runJobId = runUrl.substring(runUrl.indexOf("./") + 2);
+                            if (runUrl.startsWith(parentUrl)) {
+                                // parse it and make it the id
+                                String runJobId = runUrl.substring(parentUrl.length());
                                 runJobId = runJobId.substring(0,
                                         runJobId.indexOf("/"));
                                 runJob.put("job_id", parentBuildId + "#"
                                         + runJobId);
                                 // remove build number from job URL
-                                String subUrl = runUrl;
-                                if (subUrl.endsWith("/")) {
-                                    subUrl = subUrl.substring(0,
-                                            subUrl.length() - 1);
-                                }
-                                subUrl = subUrl.substring(0,
-                                        subUrl.lastIndexOf("/") + 1);
+                                String subUrl = removeBuildNumber(runUrl);
                                 runJob.put("job_url", subUrl);
                                 if (fetcher != null) {
                                     JSONObject jsonRunBuild = fetcher.retrieveJSONObject(runUrl
@@ -164,6 +159,15 @@ public class JenkinsJsonConverter {
                 }
             }
         }
+        return res;
+    }
+
+    protected String removeBuildNumber(String url) {
+        String res = url;
+        if (res.endsWith("/")) {
+            res = res.substring(0, res.length() - 1);
+        }
+        res = res.substring(0, res.lastIndexOf("/") + 1);
         return res;
     }
 
