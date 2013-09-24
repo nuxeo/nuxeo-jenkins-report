@@ -4,7 +4,7 @@
   <description>
     <p>This addon adds the "Nuxeo Jenkins Report" functionality to Nuxeo.</p>
   </description>
-  <home-page>http://doc.nuxeo.com/</home-page>
+  <home-page>http://doc.nuxeo.com/x/M43Z</home-page>
   <vendor>Nuxeo</vendor>
   <installer restart="true" />
   <uninstaller restart="true" />
@@ -16,6 +16,6 @@
   <platforms>
     <platform>cap-@DISTRIB_VERSION@</platform>
   </platforms>
-  <license>LGPL</license>
-  <license-url>http://www.gnu.org/licenses/lgpl.html</license-url>
+  <license>LGPL 2.1</license>
+  <license-url>http://www.gnu.org/licenses/lgpl-2.1.html</license-url>
 </package>
