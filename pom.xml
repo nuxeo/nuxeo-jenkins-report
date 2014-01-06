@@ -11,10 +11,10 @@
   <artifactId>parent</artifactId>
   <packaging>pom</packaging>
   <name>Nuxeo Jenkins Report</name>
-  <version>3.4-SNAPSHOT</version>
+  <version>3.4.2-SNAPSHOT</version>
 
   <properties>
-    <nuxeo.jenkins.version>3.4-SNAPSHOT</nuxeo.jenkins.version>
+    <nuxeo.jenkins.version>3.4.2-SNAPSHOT</nuxeo.jenkins.version>
     <nuxeo.jenkins.studio.version>0.0.0-SNAPSHOT</nuxeo.jenkins.studio.version>
   </properties>
 
