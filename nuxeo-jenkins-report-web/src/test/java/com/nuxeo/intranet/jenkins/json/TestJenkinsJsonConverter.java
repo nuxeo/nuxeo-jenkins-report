@@ -51,7 +51,7 @@ public class TestJenkinsJsonConverter {
         // use a null fetcher: each job info will not be retrieved
         JenkinsJsonConverter cv = new JenkinsJsonConverter();
         List<Map<String, Serializable>> res = cv.convertJobs(json, null, null);
-        assertEquals(57, res.size());
+        assertEquals(59, res.size());
 
         Map<String, Serializable> failing = res.get(0);
         assertEquals(

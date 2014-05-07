@@ -1444,7 +1444,7 @@
     {
       "name" : "nuxeo-android-master",
       "url" : "https://qa.nuxeo.org/jenkins/job/nuxeo-android-master/",
-      "color" : "blue"
+      "color" : "notbuilt"
     },
     {
       "name" : "nuxeo-apogee-2.0",
@@ -1940,6 +1940,10 @@
       "name" : "tools_nuxeo-webengine-apt-1.3",
       "url" : "https://qa.nuxeo.org/jenkins/job/tools_nuxeo-webengine-apt-1.3/",
       "color" : "blue"
+    },
+    {
+      "name" : "template_addon",
+      "url" : "https://qa.nuxeo.org/jenkins/job/template_addon/"
     }
   ],
   "name" : "Dashboard",

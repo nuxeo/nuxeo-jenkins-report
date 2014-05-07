@@ -60,7 +60,7 @@ public class JenkinsJsonConverter {
             JSONArray jsonJobs = jsonObject.optJSONArray("jobs");
             if (jsonJobs != null) {
                 for (Object jsonJob : jsonJobs) {
-                    String color = ((JSONObject) jsonJob).getString("color");
+                    String color = ((JSONObject) jsonJob).optString("color");
                     if (color != null && !color.startsWith("blue")
                             && !color.startsWith("grey")
                             && !color.startsWith("disabled")) {
