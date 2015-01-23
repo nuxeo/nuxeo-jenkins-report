@@ -201,8 +201,7 @@ public class JenkinsJobsFetcher implements Serializable {
             if (url.startsWith("https")) {
                 url = url.replaceFirst("https", "http");
             }
-            Blob blob = new URLBlob(new URL(url), "application/json", "UTF-8",
-                    "content.json");
+            Blob blob = new URLBlob(new URL(url), "application/json", "UTF-8");
             String json = blob.getString();
             JSONObject jsonObject = JSONObject.fromObject(json);
             return jsonObject;
