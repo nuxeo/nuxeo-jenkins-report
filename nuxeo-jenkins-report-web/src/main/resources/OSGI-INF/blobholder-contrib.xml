@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<component name="com.nuxeo.jenkins.report.blobholder">
+
+  <extension target="org.nuxeo.ecm.core.api.blobholder.BlobHolderAdapterComponent"
+    point="BlobHolderFactory">
+    <blobHolderFactory name="jenkinsReport" docType="JenkinsReport"
+      class="com.nuxeo.intranet.jenkins.blobholder.JenkinsReportBlobHolderFactory" />
+  </extension>
+
+</component>

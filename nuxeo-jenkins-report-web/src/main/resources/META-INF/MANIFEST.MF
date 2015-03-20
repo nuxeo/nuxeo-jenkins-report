@@ -5,4 +5,5 @@ Bundle-SymbolicName: com.nuxeo.jenkins.report.web
 Bundle-Localization: plugin
 Bundle-Vendor: Nuxeo
 Bundle-Category: web
-Nuxeo-Component: OSGI-INF/theme-contrib.xml
+Nuxeo-Component: OSGI-INF/theme-contrib.xml,
+ OSGI-INF/blobholder-contrib.xml
