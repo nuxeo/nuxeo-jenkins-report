@@ -26,6 +26,9 @@
     <copy todir="${maven.project.build.directory}/marketplace/install/bundles/">
       <artifact:resolveFile key="com.nuxeo.jenkins.report:nuxeo-jenkins-report-web:${nuxeo.jenkins.version}:jar" />
     </copy>
+    <copy todir="${maven.project.build.directory}/marketplace/install/libs/">
+      <artifact:resolveFile key="org.mvel:mvel2::jar" />
+    </copy>
 
     <zip destfile="${maven.project.build.directory}/${maven.project.artifactId}-${nuxeo.jenkins.version}.zip"
          basedir="${maven.project.build.directory}/marketplace" />
