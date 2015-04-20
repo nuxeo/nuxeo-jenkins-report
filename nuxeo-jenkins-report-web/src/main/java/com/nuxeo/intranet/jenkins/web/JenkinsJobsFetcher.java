@@ -18,6 +18,7 @@ package com.nuxeo.intranet.jenkins.web;
 
 import static org.jboss.seam.ScopeType.EVENT;
 
+import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.net.URL;
 import java.text.DateFormat;
@@ -185,10 +186,16 @@ public class JenkinsJobsFetcher implements Serializable {
             if (url.startsWith("https")) {
                 url = url.replaceFirst("https", "http");
             }
-            Blob blob = new URLBlob(new URL(url), "application/json", "UTF-8", "content.json");
-            String json = blob.getString();
-            JSONObject jsonObject = JSONObject.fromObject(json);
-            return jsonObject;
+            Blob blob = new URLBlob(new URL(url), "application/json", "UTF-8");
+            blob.setFilename("content.json");
+            try {
+                String json = blob.getString();
+                JSONObject jsonObject = JSONObject.fromObject(json);
+                return jsonObject;
+            } catch (FileNotFoundException e) {
+                // no last status for this job
+                return null;
+            }
         } catch (Exception e) {
             log.error(e, e);
             logMessage(StatusMessage.Severity.ERROR,

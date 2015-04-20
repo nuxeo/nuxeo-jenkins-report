@@ -98,6 +98,9 @@ public class JenkinsJsonConverter {
             if (jsonBuild != null) {
                 job.putAll(convertBuild(jsonBuild));
                 subJobs = convertMultiOSDBJobs(jobId, jsonBuild, fetcher);
+            } else {
+                // at least fill the status as "unknown"
+                job.put("type", "");
             }
         }
         if (subJobs != null && !subJobs.isEmpty()) {
