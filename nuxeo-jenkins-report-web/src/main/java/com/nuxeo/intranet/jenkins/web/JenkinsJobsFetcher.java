@@ -50,8 +50,7 @@ import org.nuxeo.ecm.platform.ui.web.util.ComponentUtils;
 import org.nuxeo.ecm.webapp.contentbrowser.DocumentActions;
 
 /**
- * Fetches unstable jobs information from Jenkins json API and fill a list JSF
- * component with returned values.
+ * Fetches unstable jobs information from Jenkins json API and fill a list JSF component with returned values.
  *
  * @since 5.6
  */
@@ -91,8 +90,7 @@ public class JenkinsJobsFetcher implements Serializable {
     public void fetchJobsToList(ActionEvent event) {
         // retrieve new values from URL first
         if (jenkinsURL == null) {
-            logMessage(StatusMessage.Severity.ERROR,
-                    "No URL sent to check Jenkins jobs");
+            logMessage(StatusMessage.Severity.ERROR, "No URL sent to check Jenkins jobs");
             return;
         }
 
@@ -101,10 +99,8 @@ public class JenkinsJobsFetcher implements Serializable {
             if (component == null) {
                 return;
             }
-            UIEditableList list = ComponentUtils.getComponent(component,
-                    listComponentId, UIEditableList.class);
-            EditableValueHolder comment = ComponentUtils.getComponent(
-                    component, lastUpdateFeedbackComponentId,
+            UIEditableList list = ComponentUtils.getComponent(component, listComponentId, UIEditableList.class);
+            EditableValueHolder comment = ComponentUtils.getComponent(component, lastUpdateFeedbackComponentId,
                     EditableValueHolder.class);
 
             if (list != null) {
@@ -118,14 +114,11 @@ public class JenkinsJobsFetcher implements Serializable {
                 EditableModel em = list.getEditableModel();
                 List<Map<String, Serializable>> oldData = (List<Map<String, Serializable>>) em.getWrappedData();
                 JenkinsJsonConverter cv = new JenkinsJsonConverter();
-                List<Map<String, Serializable>> jenkinsData = cv.convertJobs(
-                        json, oldData, this);
-                List<Map<String, Serializable>> mergedData = cv.mergeData(
-                        oldData, jenkinsData);
+                List<Map<String, Serializable>> jenkinsData = cv.convertJobs(json, oldData, this);
+                List<Map<String, Serializable>> mergedData = cv.mergeData(oldData, jenkinsData);
                 em.setWrappedData(mergedData);
 
-                logMessage(StatusMessage.Severity.INFO,
-                        "Jobs retrieved from Jenkins, enjoy!");
+                logMessage(StatusMessage.Severity.INFO, "Jobs retrieved from Jenkins, enjoy!");
                 String updateMessage = computeLastUpdateFeedbackMessage(cv);
                 if (comment != null) {
                     comment.setSubmittedValue(updateMessage);
@@ -134,9 +127,8 @@ public class JenkinsJobsFetcher implements Serializable {
 
         } catch (Exception e) {
             log.error(e, e);
-            logMessage(StatusMessage.Severity.ERROR, String.format(
-                    "Error while retrieving jobs from Jenkins: %s",
-                    e.getMessage()));
+            logMessage(StatusMessage.Severity.ERROR,
+                    String.format("Error while retrieving jobs from Jenkins: %s", e.getMessage()));
         }
     }
 
@@ -144,8 +136,7 @@ public class JenkinsJobsFetcher implements Serializable {
     public void updateFromJenkins(ActionEvent event) {
         // retrieve new values from URL first
         if (jenkinsURL == null) {
-            logMessage(StatusMessage.Severity.ERROR,
-                    "No URL sent to check Jenkins jobs");
+            logMessage(StatusMessage.Severity.ERROR, "No URL sent to check Jenkins jobs");
             return;
         }
 
@@ -160,25 +151,18 @@ public class JenkinsJobsFetcher implements Serializable {
             DocumentModel currentDoc = navigationContext.getCurrentDocument();
             List<Map<String, Serializable>> oldData = (List) currentDoc.getPropertyValue(JenkinsReportFields.JOBS_PROPERTY);
             JenkinsJsonConverter cv = new JenkinsJsonConverter();
-            List<Map<String, Serializable>> jenkinsData = cv.convertJobs(json,
-                    oldData, this);
-            List<Map<String, Serializable>> mergedData = cv.mergeData(oldData,
-                    jenkinsData);
-            currentDoc.setPropertyValue(JenkinsReportFields.JOBS_PROPERTY,
-                    (Serializable) mergedData);
-            logMessage(StatusMessage.Severity.INFO,
-                    "Jobs retrieved from Jenkins, enjoy!");
+            List<Map<String, Serializable>> jenkinsData = cv.convertJobs(json, oldData, this);
+            List<Map<String, Serializable>> mergedData = cv.mergeData(oldData, jenkinsData);
+            currentDoc.setPropertyValue(JenkinsReportFields.JOBS_PROPERTY, (Serializable) mergedData);
+            logMessage(StatusMessage.Severity.INFO, "Jobs retrieved from Jenkins, enjoy!");
             String updateMessage = computeLastUpdateFeedbackMessage(cv);
-            currentDoc.setPropertyValue(
-                    JenkinsReportFields.LAST_UPDATE_FEEDBACK_PROPERTY,
-                    updateMessage);
+            currentDoc.setPropertyValue(JenkinsReportFields.LAST_UPDATE_FEEDBACK_PROPERTY, updateMessage);
             documentActions.updateDocument(currentDoc, Boolean.TRUE);
 
         } catch (Exception e) {
             log.error(e, e);
-            logMessage(StatusMessage.Severity.ERROR, String.format(
-                    "Error while retrieving jobs from Jenkins: %s",
-                    e.getMessage()));
+            logMessage(StatusMessage.Severity.ERROR,
+                    String.format("Error while retrieving jobs from Jenkins: %s", e.getMessage()));
         }
     }
 
@@ -201,16 +185,14 @@ public class JenkinsJobsFetcher implements Serializable {
             if (url.startsWith("https")) {
                 url = url.replaceFirst("https", "http");
             }
-            Blob blob = new URLBlob(new URL(url), "application/json", "UTF-8",
-                    "content.json");
+            Blob blob = new URLBlob(new URL(url), "application/json", "UTF-8", "content.json");
             String json = blob.getString();
             JSONObject jsonObject = JSONObject.fromObject(json);
             return jsonObject;
         } catch (Exception e) {
             log.error(e, e);
-            logMessage(StatusMessage.Severity.ERROR, String.format(
-                    "Error while retrieving jobs from Jenkins for url %s: %s",
-                    url, e.getMessage()));
+            logMessage(StatusMessage.Severity.ERROR,
+                    String.format("Error while retrieving jobs from Jenkins for url %s: %s", url, e.getMessage()));
             return null;
         }
     }
@@ -220,8 +202,7 @@ public class JenkinsJobsFetcher implements Serializable {
     }
 
     @SuppressWarnings("boxing")
-    protected String computeLastUpdateFeedbackMessage(
-            JenkinsJsonConverter converter) {
+    protected String computeLastUpdateFeedbackMessage(JenkinsJsonConverter converter) {
         StringBuilder res = new StringBuilder();
         res.append("Last Update done at ");
         DateFormat aDateFormat = DateFormat.getDateTimeInstance();
@@ -242,10 +223,8 @@ public class JenkinsJobsFetcher implements Serializable {
         }
         // add final message
         if (converter != null) {
-            res.append(String.format(
-                    "Jobs retrieved from Jenkins: %s new failures, %s fixed, %s unchanged.",
-                    converter.getNewFailingCount(), converter.getFixedCount(),
-                    converter.getUnchangedCount()));
+            res.append(String.format("Jobs retrieved from Jenkins: %s new failures, %s fixed, %s unchanged.",
+                    converter.getNewFailingCount(), converter.getFixedCount(), converter.getUnchangedCount()));
         }
         return res.toString();
     }

@@ -37,8 +37,7 @@ import org.nuxeo.ecm.platform.query.nxql.NXQLQueryBuilder;
 /**
  * @since 3.4.2
  */
-public class ComplexListPropertyPageProvider extends
-        AbstractPageProvider<Map<String, Object>> {
+public class ComplexListPropertyPageProvider extends AbstractPageProvider<Map<String, Object>> {
 
     private static final long serialVersionUID = 1L;
 
@@ -63,9 +62,7 @@ public class ComplexListPropertyPageProvider extends
                 if (items == null) {
                     Object[] parameters = getParameters();
                     if (parameters == null) {
-                        throw new ClientException(
-                                "First parameter needed to resolve "
-                                        + "the list of items");
+                        throw new ClientException("First parameter needed to resolve " + "the list of items");
                     }
                     items = (List<Map<String, Object>>) parameters[0];
                 }
@@ -79,10 +76,8 @@ public class ComplexListPropertyPageProvider extends
                     // filter using simple predicates for now
                     DocumentModel doc = getSearchDocumentModel();
                     if (doc == null) {
-                        throw new ClientException(String.format(
-                                "Cannot build query of provider '%s': "
-                                        + "no search document model is set",
-                                getName()));
+                        throw new ClientException(String.format("Cannot build query of provider '%s': "
+                                + "no search document model is set", getName()));
                     }
                     PredicateDefinition[] predicates = wc.getPredicates();
                     if (predicates != null) {
@@ -94,8 +89,7 @@ public class ComplexListPropertyPageProvider extends
                             String operatorSchema = pred.getOperatorSchema();
                             String parameter = pred.getParameter();
                             PredicateFieldDefinition[] values = pred.getValues();
-                            Object value = NXQLQueryBuilder.getRawValue(doc,
-                                    values[0]);
+                            Object value = NXQLQueryBuilder.getRawValue(doc, values[0]);
                             if (value == null) {
                                 // value not provided: ignore predicate
                                 continue;
@@ -107,8 +101,7 @@ public class ComplexListPropertyPageProvider extends
                             noFilter = false;
                             for (Map<String, Object> item : items) {
                                 for (Map.Entry<String, Object> filter : filters.entrySet()) {
-                                    if (matches(item, filter.getKey(),
-                                            filter.getValue())) {
+                                    if (matches(item, filter.getKey(), filter.getValue())) {
                                         allItems.add(item);
                                     } else {
                                         // perform AND between predicates
@@ -205,8 +198,7 @@ public class ComplexListPropertyPageProvider extends
             return 0;
         }
 
-        protected int compare(Map<String, Object> arg0,
-                Map<String, Object> arg1, String sortColumn, boolean asc) {
+        protected int compare(Map<String, Object> arg0, Map<String, Object> arg1, String sortColumn, boolean asc) {
             Object v1 = arg0.get(sortColumn);
             Object v2 = arg1.get(sortColumn);
             if (v1 == null && v2 == null) {

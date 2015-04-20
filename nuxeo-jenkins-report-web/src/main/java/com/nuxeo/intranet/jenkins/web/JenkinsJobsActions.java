@@ -35,34 +35,29 @@ import org.jboss.seam.annotations.Scope;
 public class JenkinsJobsActions {
 
     /**
-     * Converts a job comment to HTML and parses JIRA issues to turn them into
-     * links.
+     * Converts a job comment to HTML and parses JIRA issues to turn them into links.
      *
      * @param jiraUrl TODO
      */
-    public String getConvertedJobComment(String toConvert, String jiraURL,
-            String[] jiraProjects) {
+    public String getConvertedJobComment(String toConvert, String jiraURL, String[] jiraProjects) {
         if (toConvert == null) {
             return null;
         }
 
-        if (StringUtils.isBlank(jiraURL) || jiraProjects == null
-                || jiraProjects.length == 0) {
+        if (StringUtils.isBlank(jiraURL) || jiraProjects == null || jiraProjects.length == 0) {
             toConvert = toConvert.replace("\n", "<br />\n");
             return toConvert;
         }
 
         String res = "";
-        String regexp = "\\b(" + StringUtils.join(jiraProjects, "|")
-                + ")-\\d+\\b";
+        String regexp = "\\b(" + StringUtils.join(jiraProjects, "|") + ")-\\d+\\b";
         Pattern pattern = Pattern.compile(regexp, Pattern.CASE_INSENSITIVE);
         Matcher m = pattern.matcher(toConvert);
         int lastIndex = 0;
         boolean done = false;
         while (m.find()) {
             String jiraIssue = m.group(0);
-            res += toConvert.substring(lastIndex, m.start())
-                    + getJiraUrlTag(jiraURL, jiraIssue);
+            res += toConvert.substring(lastIndex, m.start()) + getJiraUrlTag(jiraURL, jiraIssue);
             lastIndex = m.end();
             done = true;
         }
@@ -76,7 +71,7 @@ public class JenkinsJobsActions {
     }
 
     protected String getJiraUrlTag(String jiraURL, String jiraIssue) {
-        return "<a href=\"" + jiraURL + jiraIssue.toUpperCase()
-                + "\" target=\"_blank\">" + jiraIssue.toUpperCase() + "</a>";
+        return "<a href=\"" + jiraURL + jiraIssue.toUpperCase() + "\" target=\"_blank\">" + jiraIssue.toUpperCase()
+                + "</a>";
     }
 }

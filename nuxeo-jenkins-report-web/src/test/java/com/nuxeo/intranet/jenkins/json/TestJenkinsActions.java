@@ -42,29 +42,21 @@ public class TestJenkinsActions {
                         + "are issues from the NXP and NXBT project. The regexp should wrap NXBT-Something.");
 
         toConvert = "NXP-123";
-        Assert.assertEquals(
-                actions.getConvertedJobComment(toConvert, jiraUrl, jiraProjects),
+        Assert.assertEquals(actions.getConvertedJobComment(toConvert, jiraUrl, jiraProjects),
                 "<a href=\"https://jira.nuxeo.com/browse/NXP-123\" target=\"_blank\">NXP-123</a>");
 
         toConvert = "nxp-123";
-        Assert.assertEquals(
-                actions.getConvertedJobComment(toConvert, jiraUrl, jiraProjects),
+        Assert.assertEquals(actions.getConvertedJobComment(toConvert, jiraUrl, jiraProjects),
                 "<a href=\"https://jira.nuxeo.com/browse/NXP-123\" target=\"_blank\">NXP-123</a>");
 
         toConvert = null;
-        Assert.assertNull(actions.getConvertedJobComment(toConvert, jiraUrl,
-                jiraProjects));
+        Assert.assertNull(actions.getConvertedJobComment(toConvert, jiraUrl, jiraProjects));
         toConvert = "voila voila\n voila";
-        Assert.assertEquals(
-                actions.getConvertedJobComment(toConvert, jiraUrl, jiraProjects),
+        Assert.assertEquals(actions.getConvertedJobComment(toConvert, jiraUrl, jiraProjects),
                 "voila voila<br />\n voila");
         toConvert = "NXP-123";
-        Assert.assertEquals(
-                actions.getConvertedJobComment(toConvert, null, jiraProjects),
-                "NXP-123");
-        Assert.assertEquals(
-                actions.getConvertedJobComment(toConvert, jiraUrl, null),
-                "NXP-123");
+        Assert.assertEquals(actions.getConvertedJobComment(toConvert, null, jiraProjects), "NXP-123");
+        Assert.assertEquals(actions.getConvertedJobComment(toConvert, jiraUrl, null), "NXP-123");
     }
 
 }

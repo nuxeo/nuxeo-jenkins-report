@@ -40,8 +40,7 @@ import com.nuxeo.intranet.jenkins.web.JenkinsJsonConverter;
 public class TestJenkinsJsonConverter {
 
     protected JSONObject getJsonBuild(String jsonPath) throws Exception {
-        InputStream stream = new FileInputStream(
-                FileUtils.getResourcePathFromContext(jsonPath));
+        InputStream stream = new FileInputStream(FileUtils.getResourcePathFromContext(jsonPath));
         return JSONObject.fromObject(FileUtils.read(stream));
     }
 
@@ -54,11 +53,9 @@ public class TestJenkinsJsonConverter {
         assertEquals(59, res.size());
 
         Map<String, Serializable> failing = res.get(0);
-        assertEquals(
-                "https://qa.nuxeo.org/jenkins/job/addons_FT-nuxeo-platform-faceted-search-master-tomcat/",
+        assertEquals("https://qa.nuxeo.org/jenkins/job/addons_FT-nuxeo-platform-faceted-search-master-tomcat/",
                 failing.get("job_url"));
-        assertEquals("addons_FT-nuxeo-platform-faceted-search-master-tomcat",
-                failing.get("job_id"));
+        assertEquals("addons_FT-nuxeo-platform-faceted-search-master-tomcat", failing.get("job_id"));
     }
 
     @Test
@@ -73,17 +70,13 @@ public class TestJenkinsJsonConverter {
         assertEquals("702", build.get("build_number"));
         assertEquals("UNSTABLE", build.get("type"));
         assertEquals("mcedica", build.get("claimer"));
-        assertEquals("Claim reason: checking\n\nDescription: test comment",
-                build.get("comment"));
+        assertEquals("Claim reason: checking\n\nDescription: test comment", build.get("comment"));
         assertNull(build.get("updated_comment"));
         assertEquals(1, ((List) build.get("culprits")).size());
-        assertEquals("Laurent Doguin <ldoguin@nuxeo.com>",
-                ((List) build.get("culprits")).get(0));
+        assertEquals("Laurent Doguin <ldoguin@nuxeo.com>", ((List) build.get("culprits")).get(0));
     }
 
-    protected JenkinsJsonConverter mergeData(
-            Map<String, Serializable> oldBuild,
-            Map<String, Serializable> newBuild) {
+    protected JenkinsJsonConverter mergeData(Map<String, Serializable> oldBuild, Map<String, Serializable> newBuild) {
         JenkinsJsonConverter cv = new JenkinsJsonConverter();
         List<Map<String, Serializable>> oldData = new ArrayList<Map<String, Serializable>>();
         oldData.add(oldBuild);
@@ -116,13 +109,10 @@ public class TestJenkinsJsonConverter {
         assertEquals("702", mergedBuild.get("build_number"));
         assertEquals("UNSTABLE", mergedBuild.get("type"));
         assertEquals("mcedica", mergedBuild.get("claimer"));
-        assertEquals(
-                "Claim reason: checking\n\n" + "Description: test comment",
-                mergedBuild.get("comment"));
+        assertEquals("Claim reason: checking\n\n" + "Description: test comment", mergedBuild.get("comment"));
         assertNull(mergedBuild.get("updated_comment"));
         assertEquals(1, ((List) mergedBuild.get("culprits")).size());
-        assertEquals("Laurent Doguin <ldoguin@nuxeo.com>",
-                ((List) mergedBuild.get("culprits")).get(0));
+        assertEquals("Laurent Doguin <ldoguin@nuxeo.com>", ((List) mergedBuild.get("culprits")).get(0));
     }
 
     @Test
@@ -149,13 +139,11 @@ public class TestJenkinsJsonConverter {
         assertEquals("702", mergedBuild.get("build_number"));
         assertEquals("UNSTABLE", mergedBuild.get("type"));
         assertEquals("mcedica", mergedBuild.get("claimer"));
-        assertEquals("Claim reason: checking with modified claim reason\n\n"
-                + "Description: test comment modified",
+        assertEquals("Claim reason: checking with modified claim reason\n\n" + "Description: test comment modified",
                 mergedBuild.get("comment"));
         assertNull(mergedBuild.get("updated_comment"));
         assertEquals(1, ((List) mergedBuild.get("culprits")).size());
-        assertEquals("Laurent Doguin <ldoguin@nuxeo.com>",
-                ((List) mergedBuild.get("culprits")).get(0));
+        assertEquals("Laurent Doguin <ldoguin@nuxeo.com>", ((List) mergedBuild.get("culprits")).get(0));
     }
 
     @Test
@@ -182,34 +170,28 @@ public class TestJenkinsJsonConverter {
         assertEquals("702", mergedBuild.get("build_number"));
         assertEquals("UNSTABLE", mergedBuild.get("type"));
         assertEquals("mcedica", mergedBuild.get("claimer"));
-        assertEquals(
-                "Claim reason: checking\n\n" + "Description: test comment",
-                mergedBuild.get("comment"));
-        assertEquals("Claim reason: checking new stuff\n\n"
-                + "Description: test new comment",
+        assertEquals("Claim reason: checking\n\n" + "Description: test comment", mergedBuild.get("comment"));
+        assertEquals("Claim reason: checking new stuff\n\n" + "Description: test new comment",
                 mergedBuild.get("updated_comment"));
         assertEquals(1, ((List) mergedBuild.get("culprits")).size());
-        assertEquals("Laurent Doguin <ldoguin@nuxeo.com>",
-                ((List) mergedBuild.get("culprits")).get(0));
+        assertEquals("Laurent Doguin <ldoguin@nuxeo.com>", ((List) mergedBuild.get("culprits")).get(0));
     }
 
     @Test
     public void testMultiOSDBBuildConverter() throws Exception {
-        InputStream stream = new FileInputStream(
-                FileUtils.getResourcePathFromContext("multiosdb_build.json"));
+        InputStream stream = new FileInputStream(FileUtils.getResourcePathFromContext("multiosdb_build.json"));
         JSONObject json = JSONObject.fromObject(FileUtils.read(stream));
 
         // use a null fetcher: each job info will not be retrieved
         JenkinsJsonConverter cv = new JenkinsJsonConverter();
-        List<Map<String, Serializable>> builds = cv.convertMultiOSDBJobs(
-                "FT-nuxeo-5.6.0-selenium-dm-tomcat", json, null);
+        List<Map<String, Serializable>> builds = cv.convertMultiOSDBJobs("FT-nuxeo-5.6.0-selenium-dm-tomcat", json,
+                null);
         assertNotNull(builds);
         assertEquals(9, builds.size());
         assertEquals(
                 "https://qa.nuxeo.org/jenkins/job/FT-nuxeo-5.6.0-selenium-dm-tomcat-multiosdb/Slave=MULTIDB_LINUX,dbprofile=mssql/",
                 builds.get(0).get("job_url"));
-        assertEquals(
-                "FT-nuxeo-5.6.0-selenium-dm-tomcat#Slave=MULTIDB_LINUX,dbprofile=mssql",
+        assertEquals("FT-nuxeo-5.6.0-selenium-dm-tomcat#Slave=MULTIDB_LINUX,dbprofile=mssql",
                 builds.get(0).get("job_id"));
     }
 

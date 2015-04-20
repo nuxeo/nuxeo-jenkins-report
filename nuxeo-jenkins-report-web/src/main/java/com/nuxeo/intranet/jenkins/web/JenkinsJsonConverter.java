@@ -32,8 +32,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 /**
- * Convertes json data retrieved from Jenkins into data that can be fed to
- * document properties.
+ * Convertes json data retrieved from Jenkins into data that can be fed to document properties.
  *
  * @since 5.6
  */
@@ -51,9 +50,8 @@ public class JenkinsJsonConverter {
 
     List<Map<String, Serializable>> mergedData = null;
 
-    public List<Map<String, Serializable>> convertJobs(JSONObject jsonObject,
-            List<Map<String, Serializable>> oldData, JenkinsJobsFetcher fetcher)
-            throws IOException {
+    public List<Map<String, Serializable>> convertJobs(JSONObject jsonObject, List<Map<String, Serializable>> oldData,
+            JenkinsJobsFetcher fetcher) throws IOException {
         List<Map<String, Serializable>> res = new ArrayList<Map<String, Serializable>>();
         List<String> retrievedJobs = new ArrayList<String>();
         if (jsonObject != null) {
@@ -61,8 +59,7 @@ public class JenkinsJsonConverter {
             if (jsonJobs != null) {
                 for (Object jsonJob : jsonJobs) {
                     String color = ((JSONObject) jsonJob).optString("color");
-                    if (color != null && !color.startsWith("blue")
-                            && !color.startsWith("grey")
+                    if (color != null && !color.startsWith("blue") && !color.startsWith("grey")
                             && !color.startsWith("disabled")) {
                         String url = ((JSONObject) jsonJob).getString("url");
                         String jobId = ((JSONObject) jsonJob).getString("name");
@@ -86,8 +83,8 @@ public class JenkinsJsonConverter {
         return res;
     }
 
-    protected List<Map<String, Serializable>> retrieveJobs(String jobId,
-            String url, JenkinsJobsFetcher fetcher) throws IOException {
+    protected List<Map<String, Serializable>> retrieveJobs(String jobId, String url, JenkinsJobsFetcher fetcher)
+            throws IOException {
         List<Map<String, Serializable>> res = new ArrayList<Map<String, Serializable>>();
         Map<String, Serializable> job = new HashMap<String, Serializable>();
         job.put("job_id", jobId);
@@ -97,8 +94,7 @@ public class JenkinsJsonConverter {
             // retrieve additional info for each failing job,
             // fetching the whole state in one query using the
             // "depth" attribute is more costly
-            JSONObject jsonBuild = fetcher.retrieveJSONObject(url.trim()
-                    + "lastCompletedBuild/api/json");
+            JSONObject jsonBuild = fetcher.retrieveJSONObject(url.trim() + "lastCompletedBuild/api/json");
             if (jsonBuild != null) {
                 job.putAll(convertBuild(jsonBuild));
                 subJobs = convertMultiOSDBJobs(jobId, jsonBuild, fetcher);
@@ -113,8 +109,7 @@ public class JenkinsJsonConverter {
         return res;
     }
 
-    public List<Map<String, Serializable>> convertMultiOSDBJobs(
-            String parentBuildId, JSONObject jsonParentBuild,
+    public List<Map<String, Serializable>> convertMultiOSDBJobs(String parentBuildId, JSONObject jsonParentBuild,
             JenkinsJobsFetcher fetcher) throws IOException {
         List<Map<String, Serializable>> res = new ArrayList<Map<String, Serializable>>();
         if (jsonParentBuild.containsKey("runs")) {
@@ -131,16 +126,13 @@ public class JenkinsJsonConverter {
                             if (runUrl.startsWith(parentUrl)) {
                                 // parse it and make it the id
                                 String runJobId = runUrl.substring(parentUrl.length());
-                                runJobId = runJobId.substring(0,
-                                        runJobId.indexOf("/"));
-                                runJob.put("job_id", parentBuildId + "#"
-                                        + runJobId);
+                                runJobId = runJobId.substring(0, runJobId.indexOf("/"));
+                                runJob.put("job_id", parentBuildId + "#" + runJobId);
                                 // remove build number from job URL
                                 String subUrl = removeBuildNumber(runUrl);
                                 runJob.put("job_url", subUrl);
                                 if (fetcher != null) {
-                                    JSONObject jsonRunBuild = fetcher.retrieveJSONObject(runUrl
-                                            + "api/json");
+                                    JSONObject jsonRunBuild = fetcher.retrieveJSONObject(runUrl + "api/json");
                                     if (jsonRunBuild != null) {
                                         runJob.putAll(convertBuild(jsonRunBuild));
                                     }
@@ -171,8 +163,7 @@ public class JenkinsJsonConverter {
         return res;
     }
 
-    public Map<String, Serializable> convertBuild(JSONObject jsonBuild)
-            throws IOException {
+    public Map<String, Serializable> convertBuild(JSONObject jsonBuild) throws IOException {
         Map<String, Serializable> build = new HashMap<String, Serializable>();
         // get build number
         build.put("build_number", String.valueOf(jsonBuild.optInt("number")));
@@ -181,8 +172,7 @@ public class JenkinsJsonConverter {
         JSONArray actions = jsonBuild.optJSONArray("actions");
         if (actions != null) {
             for (Object jsonAction : actions) {
-                if (jsonAction != null
-                        && ((JSONObject) jsonAction).has("claimed")) {
+                if (jsonAction != null && ((JSONObject) jsonAction).has("claimed")) {
                     JSONObject claim = (JSONObject) jsonAction;
                     if (claim.optBoolean("claimed")) {
                         build.put("claimer", claim.optString("claimedBy"));
@@ -224,8 +214,7 @@ public class JenkinsJsonConverter {
         return build;
     }
 
-    public List<Map<String, Serializable>> mergeData(
-            List<Map<String, Serializable>> oldData,
+    public List<Map<String, Serializable>> mergeData(List<Map<String, Serializable>> oldData,
             List<Map<String, Serializable>> newData) {
         // reset counters and merged data
         newFailingCount = 0;
@@ -249,8 +238,7 @@ public class JenkinsJsonConverter {
                 if (res.containsKey(id)) {
                     Map<String, Serializable> oldItem = res.get(id);
                     String oldBuildNumber = String.valueOf(oldItem.get("build_number"));
-                    if (build_number != null
-                            && build_number.equals(oldBuildNumber)) {
+                    if (build_number != null && build_number.equals(oldBuildNumber)) {
                         // already the same job => update claimer and comment
                         // override claimer and comments
                         oldItem.put("claimer", item.get("claimer"));
@@ -264,8 +252,7 @@ public class JenkinsJsonConverter {
                         oldItem.put("updated_comment", item.get("comment"));
                         // only override claimer
                         oldItem.put("claimer", item.get("claimer"));
-                        if ("SUCCESS".equals(newType)
-                                && !"SUCCESS".equals(oldType)) {
+                        if ("SUCCESS".equals(newType) && !"SUCCESS".equals(oldType)) {
                             fixedCount++;
                         }
                     }
