@@ -24,8 +24,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.nuxeo.ecm.core.api.ClientException;
 import org.nuxeo.ecm.core.api.DocumentModel;
+import org.nuxeo.ecm.core.api.NuxeoException;
 import org.nuxeo.ecm.core.api.SortInfo;
 import org.nuxeo.ecm.platform.query.api.AbstractPageProvider;
 import org.nuxeo.ecm.platform.query.api.PageProviderDefinition;
@@ -62,7 +62,7 @@ public class ComplexListPropertyPageProvider extends AbstractPageProvider<Map<St
                 if (items == null) {
                     Object[] parameters = getParameters();
                     if (parameters == null) {
-                        throw new ClientException("First parameter needed to resolve " + "the list of items");
+                        throw new NuxeoException("First parameter needed to resolve " + "the list of items");
                     }
                     items = (List<Map<String, Object>>) parameters[0];
                 }
@@ -76,7 +76,7 @@ public class ComplexListPropertyPageProvider extends AbstractPageProvider<Map<St
                     // filter using simple predicates for now
                     DocumentModel doc = getSearchDocumentModel();
                     if (doc == null) {
-                        throw new ClientException(String.format("Cannot build query of provider '%s': "
+                        throw new NuxeoException(String.format("Cannot build query of provider '%s': "
                                 + "no search document model is set", getName()));
                     }
                     PredicateDefinition[] predicates = wc.getPredicates();
@@ -137,7 +137,7 @@ public class ComplexListPropertyPageProvider extends AbstractPageProvider<Map<St
                     pos += 1;
                     currentItems.add(allItems.get(i));
                 }
-            } catch (ClientException e) {
+            } catch (NuxeoException e) {
                 error = e;
                 errorMessage = e.getMessage();
                 log.warn(e.getMessage(), e);
