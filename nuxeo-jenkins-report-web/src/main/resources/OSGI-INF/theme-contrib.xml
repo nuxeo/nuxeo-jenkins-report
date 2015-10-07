@@ -7,20 +7,23 @@
     because branding is not yet adapted to it.
   </documentation>
 
-  <require>org.nuxeo.theme.nuxeo.default</require>
+  <require>org.nuxeo.theme.nuxeo.webapp</require>
 
   <extension target="org.nuxeo.theme.styling.service" point="pages">
     <themePage name="galaxy/default">
-      <styles append="true">
-        <style>nuxeo_jenkins_report</style>
-      </styles>
+      <resources append="true">
+        <resource>nuxeo_jenkins_report.css</resource>
+      </resources>
     </themePage>
   </extension>
 
-  <extension target="org.nuxeo.theme.styling.service" point="styles">
-    <style name="nuxeo_jenkins_report">
-      <src>themes/css/nuxeo_jenkins_report.css</src>
-    </style>
+  <extension target="org.nuxeo.ecm.platform.WebResources" point="resources">
+    <resource name="nuxeo_jenkins_report.css">
+      <path>themes/css/nuxeo_jenkins_report.css</path>
+      <processors>
+        <processor>flavor</processor>
+      </processors>
+    </resource>
   </extension>
 
 </component>
