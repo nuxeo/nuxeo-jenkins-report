@@ -17,10 +17,6 @@
       <artifactId>nuxeo-jenkins-report-web</artifactId>
       <groupId>com.nuxeo.jenkins.report</groupId>
     </dependency>
-    <dependency>
-      <groupId>org.mvel</groupId>
-      <artifactId>mvel2</artifactId>
-    </dependency>
   </dependencies>
 
   <build>

@@ -18,9 +18,6 @@
       <artifact:resolveFile key="nuxeo-studio:nuxeo-jenkins-report" />
       <artifact:file key="com.nuxeo.jenkins.report:nuxeo-jenkins-report-web" />
     </copy>
-    <copy todir="${maven.project.build.directory}/marketplace/install/libs/">
-      <artifact:file key="org.mvel:mvel2" />
-    </copy>
 
     <zip destfile="${maven.project.build.directory}/${maven.project.artifactId}-${nuxeo.jenkins.version}.zip"
          basedir="${maven.project.build.directory}/marketplace" />
