@@ -20,8 +20,13 @@ package com.nuxeo.intranet.jenkins.web;
 
 import static org.jboss.seam.ScopeType.EVENT;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.Serializable;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.DateFormat;
 import java.util.Date;
@@ -33,8 +38,7 @@ import javax.faces.component.EditableValueHolder;
 import javax.faces.component.UIComponent;
 import javax.faces.event.ActionEvent;
 
-import net.sf.json.JSONObject;
-
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jboss.seam.annotations.In;
@@ -43,14 +47,15 @@ import org.jboss.seam.annotations.Scope;
 import org.jboss.seam.annotations.web.RequestParameter;
 import org.jboss.seam.faces.FacesMessages;
 import org.jboss.seam.international.StatusMessage;
-import org.nuxeo.ecm.core.api.Blob;
 import org.nuxeo.ecm.core.api.DocumentModel;
-import org.nuxeo.ecm.core.api.impl.blob.URLBlob;
 import org.nuxeo.ecm.platform.ui.web.api.NavigationContext;
 import org.nuxeo.ecm.platform.ui.web.component.list.UIEditableList;
 import org.nuxeo.ecm.platform.ui.web.model.EditableModel;
 import org.nuxeo.ecm.platform.ui.web.util.ComponentUtils;
 import org.nuxeo.ecm.webapp.contentbrowser.DocumentActions;
+
+import net.sf.json.JSONException;
+import net.sf.json.JSONObject;
 
 /**
  * Fetches unstable jobs information from Jenkins json API and fill a list JSF component with returned values.
@@ -152,7 +157,8 @@ public class JenkinsJobsFetcher implements Serializable {
 
             JSONObject json = retrieveJSONObject(jsonURL);
             DocumentModel currentDoc = navigationContext.getCurrentDocument();
-            List<Map<String, Serializable>> oldData = (List) currentDoc.getPropertyValue(JenkinsReportFields.JOBS_PROPERTY);
+            List<Map<String, Serializable>> oldData = (List) currentDoc.getPropertyValue(
+                    JenkinsReportFields.JOBS_PROPERTY);
             JenkinsJsonConverter cv = new JenkinsJsonConverter();
             List<Map<String, Serializable>> jenkinsData = cv.convertJobs(json, oldData, this);
             List<Map<String, Serializable>> mergedData = cv.mergeData(oldData, jenkinsData);
@@ -183,27 +189,45 @@ public class JenkinsJobsFetcher implements Serializable {
         if (url == null) {
             return null;
         }
+        BufferedReader in = null;
         try {
-            // avoid https
-            if (url.startsWith("https")) {
-                url = url.replaceFirst("https", "http");
+            HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
+            conn.setInstanceFollowRedirects(true);
+            int status = conn.getResponseCode();
+            boolean redirect = false;
+            if (status != HttpURLConnection.HTTP_OK && (status == HttpURLConnection.HTTP_MOVED_TEMP
+                    || status == HttpURLConnection.HTTP_MOVED_PERM || status == HttpURLConnection.HTTP_SEE_OTHER)) {
+                redirect = true;
             }
-            Blob blob = new URLBlob(new URL(url), "application/json", "UTF-8");
-            blob.setFilename("content.json");
-            try {
-                String json = blob.getString();
-                JSONObject jsonObject = JSONObject.fromObject(json);
-                return jsonObject;
-            } catch (FileNotFoundException e) {
-                // no last status for this job
-                return null;
+            if (redirect) {
+                String newUrl = conn.getHeaderField("Location");
+                conn = (HttpURLConnection) new URL(newUrl).openConnection();
             }
-        } catch (Exception e) {
+            in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            ByteArrayOutputStream output = new ByteArrayOutputStream();
+            IOUtils.copy(in, output);
+            JSONObject jsonObject = JSONObject.fromObject(output.toString());
+            return jsonObject;
+        } catch (FileNotFoundException e) {
+            // no last status for this job
+            return null;
+        } catch (IOException | JSONException e) {
             log.error(e, e);
             logMessage(StatusMessage.Severity.ERROR,
                     String.format("Error while retrieving jobs from Jenkins for url %s: %s", url, e.getMessage()));
             return null;
+        } finally {
+            if (in != null) {
+                try {
+                    in.close();
+                } catch (IOException e) {
+                    log.error(e, e);
+                    logMessage(StatusMessage.Severity.ERROR,
+                            String.format("Error while closing stream for url %s: %s", url, e.getMessage()));
+                }
+            }
         }
+
     }
 
     protected void logMessage(StatusMessage.Severity severity, String message) {
