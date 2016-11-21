@@ -2,7 +2,7 @@
 <package type="addon" name="nuxeo-jenkins-report-mp" version="@VERSION@">
   <title>Nuxeo Jenkins Report</title>
   <description>
-    <p>This addon adds the "Nuxeo Jenkins Report" functionality to Nuxeo.</p>
+    <p>The Nuxeo Jenkins Report addon enables users of the Nuxeo Platform to generate and send reports on the status of the Continuous Integration on Jenkins, directly from the Nuxeo Platform. The plugin has been made for Nuxeo organisation purpose and is shared gracefuly in case you would be interested by the same use case.</p>
   </description>
   <home-page>http://doc.nuxeo.com/x/M43Z</home-page>
   <vendor>Nuxeo</vendor>
