@@ -29,12 +29,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import net.sf.json.JSONObject;
-
+import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 import org.nuxeo.common.utils.FileUtils;
 
 import com.nuxeo.intranet.jenkins.web.JenkinsJsonConverter;
+
+import net.sf.json.JSONObject;
 
 /**
  * @since 5.6
@@ -42,8 +43,9 @@ import com.nuxeo.intranet.jenkins.web.JenkinsJsonConverter;
 public class TestJenkinsJsonConverter {
 
     protected JSONObject getJsonBuild(String jsonPath) throws Exception {
-        InputStream stream = new FileInputStream(FileUtils.getResourcePathFromContext(jsonPath));
-        return JSONObject.fromObject(FileUtils.read(stream));
+        try (InputStream stream = new FileInputStream(FileUtils.getResourcePathFromContext(jsonPath))) {
+            return JSONObject.fromObject(IOUtils.toString(stream));
+        }
     }
 
     @Test
@@ -182,7 +184,7 @@ public class TestJenkinsJsonConverter {
     @Test
     public void testMultiOSDBBuildConverter() throws Exception {
         InputStream stream = new FileInputStream(FileUtils.getResourcePathFromContext("multiosdb_build.json"));
-        JSONObject json = JSONObject.fromObject(FileUtils.read(stream));
+        JSONObject json = JSONObject.fromObject(IOUtils.toString(stream));
 
         // use a null fetcher: each job info will not be retrieved
         JenkinsJsonConverter cv = new JenkinsJsonConverter();
