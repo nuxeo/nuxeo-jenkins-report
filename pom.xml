@@ -15,7 +15,7 @@
 
   <properties>
     <nuxeo.jenkins.version>3.8.11-SNAPSHOT</nuxeo.jenkins.version>
-    <nuxeo.jenkins.studio.version>3.8.4</nuxeo.jenkins.studio.version>
+    <nuxeo.jenkins.studio.version>3.9.1</nuxeo.jenkins.studio.version>
   </properties>
 
   <modules>
