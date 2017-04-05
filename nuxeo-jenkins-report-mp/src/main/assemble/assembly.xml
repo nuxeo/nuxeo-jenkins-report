@@ -10,6 +10,7 @@
       <fileset dir="src/main/resources" />
       <filterset>
         <filter token="VERSION" value="${nuxeo.jenkins.version}" />
+        <filter token="TARGET_PLATFORM_VERSION" value="${nuxeo.target.platform.version}" />
         <filter token="DISTRIB_VERSION" value="${nuxeo.distribution.version}" />
       </filterset>
     </copy>
