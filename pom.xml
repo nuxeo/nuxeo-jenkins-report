@@ -15,7 +15,7 @@
 
   <properties>
     <nuxeo.jenkins.version>3.9.2-SNAPSHOT</nuxeo.jenkins.version>
-    <nuxeo.jenkins.studio.version>3.9.1</nuxeo.jenkins.studio.version>
+    <nuxeo.jenkins.studio.version>3.9.2</nuxeo.jenkins.studio.version>
     <nuxeo.target.platform.version>9.2</nuxeo.target.platform.version>
   </properties>
 
