@@ -116,6 +116,41 @@
     </repository>
   </repositories>
 
+  <profiles>
+    <profile>
+      <id>nightly</id>
+      <repositories>
+        <repository>
+          <id>nightly-staging</id>
+          <url>http://mavenin.nuxeo.com/nexus/content/repositories/nightly-staging</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+        <repository>
+          <id>nightly-staging-priv</id>
+          <url>https://mavenpriv.nuxeo.com/nexus/content/repositories/nightly-staging-priv</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+      <distributionManagement>
+        <repository>
+          <id>nightly-staging</id>
+          <url>https://mavenpriv.nuxeo.com/nexus/content/repositories/nightly-staging-priv/</url>
+          <uniqueVersion>true</uniqueVersion>
+        </repository>
+      </distributionManagement>
+    </profile>
+</profiles>
+
   <scm>
     <connection>scm:git:git://github.com/nuxeo/nuxeo-jenkins-report.git</connection>
     <developerConnection>scm:git:ssh://git@github.com:nuxeo/nuxeo-jenkins-report.git</developerConnection>
