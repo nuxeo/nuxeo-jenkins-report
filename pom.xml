@@ -4,17 +4,17 @@
   <parent>
     <groupId>org.nuxeo.ecm.distribution</groupId>
     <artifactId>nuxeo-distribution</artifactId>
-    <version>10.1-SNAPSHOT</version>
+    <version>10.1</version>
   </parent>
 
   <groupId>com.nuxeo.jenkins.report</groupId>
   <artifactId>parent</artifactId>
   <packaging>pom</packaging>
   <name>Nuxeo Jenkins Report</name>
-  <version>3.10.1-SNAPSHOT</version>
+  <version>3.10.1</version>
 
   <properties>
-    <nuxeo.jenkins.version>3.10.1-SNAPSHOT</nuxeo.jenkins.version>
+    <nuxeo.jenkins.version>3.10.1</nuxeo.jenkins.version>
     <nuxeo.jenkins.studio.version>3.10.1</nuxeo.jenkins.studio.version>
     <nuxeo.target.platform.version>10.1</nuxeo.target.platform.version>
   </properties>
