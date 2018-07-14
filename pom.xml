@@ -15,8 +15,8 @@
 
   <properties>
     <nuxeo.jenkins.version>3.10.2-SNAPSHOT</nuxeo.jenkins.version>
-    <nuxeo.jenkins.studio.version>3.10.1</nuxeo.jenkins.studio.version>
-    <nuxeo.target.platform.version>10.1</nuxeo.target.platform.version>
+    <nuxeo.jenkins.studio.version>3.10.2</nuxeo.jenkins.studio.version>
+    <nuxeo.target.platform.version>10.2</nuxeo.target.platform.version>
   </properties>
 
   <modules>
