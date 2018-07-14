@@ -143,7 +143,7 @@
       </repositories>
       <distributionManagement>
         <repository>
-          <id>nightly-staging</id>
+          <id>nightly-staging-priv</id>
           <url>https://mavenpriv.nuxeo.com/nexus/content/repositories/nightly-staging-priv/</url>
           <uniqueVersion>true</uniqueVersion>
         </repository>
