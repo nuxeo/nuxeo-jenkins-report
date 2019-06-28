@@ -14,6 +14,18 @@
     Addon to be used with the Studio project named nuxeo-jenkins-report.
   </description>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.nuxeo.ecm.platform</groupId>
+        <artifactId>nuxeo-jsf-ui</artifactId>
+        <type>pom</type>
+        <scope>import</scope>
+        <version>${nuxeo.distribution.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
     <dependency>
       <groupId>org.nuxeo.ecm.core</groupId>
