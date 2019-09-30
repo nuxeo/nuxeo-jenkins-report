@@ -21,7 +21,7 @@
         <artifactId>nuxeo-jsf-ui</artifactId>
         <type>pom</type>
         <scope>import</scope>
-        <version>${nuxeo.distribution.version}</version>
+        <version>${nuxeo.platform.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
